@@ -1,0 +1,8 @@
+
+.myStyle__scrollbar {
+     height : 430px
+}
+
+::-webkit-scrollbar {
+     display: none;
+     }
