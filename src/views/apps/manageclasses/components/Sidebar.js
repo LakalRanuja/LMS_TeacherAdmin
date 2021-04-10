@@ -1,39 +1,19 @@
 // ** React Imports
 import { Link } from 'react-router-dom'
+import {toggleNavBeeetweenClasses} from '../store/actions/index'
 
+
+import { useSelector } from 'react-redux'
 // ** Third Party Components
 import classnames from 'classnames'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { Button, ListGroup, ListGroupItem } from 'reactstrap'
-import { Mail, Star, Check, Trash, Plus } from 'react-feather'
+import { Mail, Star, Check, Trash, Plus, Folder, FolderPlus } from 'react-feather'
 
 const TodoSidebar = props => {
   // ** Props
   const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props
-
-  // ** Functions To Handle List Item Filter
-  const handleFilter = filter => {
-    dispatch(getTasks({ ...params, filter }))
-  }
-
-  const handleTag = tag => {
-    dispatch(getTasks({ ...params, tag }))
-  }
-
-  // ** Functions To Active List Item
-  const handleActiveItem = value => {
-    if ((params.filter && params.filter === value) || (params.tag && params.tag === value)) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  // ** Functions To Handle Add Task Click
-  const handleAddClick = () => {
-    handleTaskSidebar()
-    setMainSidebar()
-  }
+  const state = useSelector(state => state.manageClassess)
 
   return (
     <div
@@ -55,20 +35,20 @@ const TodoSidebar = props => {
                   action
                   tag={Link}
                   to={'/apps/manageclasses/view'}
-                  active={params.filter === '' && params.tag === ''}
-                  onClick={() => handleFilter('')}
+                  active={state.toggleNavClasses}
+                  onClick={() => dispatch(toggleNavBeeetweenClasses(true))}
                 >
-                  <Mail className='mr-75' size={18} />
-                  <span className='align-middle'>All Classes</span>
+                  <FolderPlus className='mr-75' size={18} />
+                  <span className='align-middle'>Teaching Classes</span>
                 </ListGroupItem>
                 <ListGroupItem
                   tag={Link}
-                  to={'/apps/manageclasses/view/second'}
-                  active={handleActiveItem('important')}
-                  onClick={() => handleFilter('important')}
+                  to={'/apps/manageclasses/view'}
+                  active={ !state.toggleNavClasses}
+                  onClick={() => dispatch(toggleNavBeeetweenClasses(false))}
                   action
                 >
-                  <Star className='mr-75' size={18} />
+                  <Folder className='mr-75' size={18} />
                   <span className='align-middle'>My Class</span>
                 </ListGroupItem>
                

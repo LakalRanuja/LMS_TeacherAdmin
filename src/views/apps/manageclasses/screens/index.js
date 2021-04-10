@@ -12,7 +12,7 @@ import TaskSidebar from '../components/TaskSidebar'
 
 // ** Store & Actions
 import { useDispatch, useSelector } from 'react-redux'
-import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } from '../store/actions'
+import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } from '../store/actions/index'
 
 // ** Styles
 import '@styles/react/apps/app-todo.scss'
@@ -42,16 +42,16 @@ const Index = () => {
   const handleTaskSidebar = () => setOpenTaskSidebar(!openTaskSidebar)
 
   // ** Get Tasks on mount & based on dependency change
-  useEffect(() => {
-    dispatch(
-      getTasks({
-        filter: paramsURL.filter || '',
-        q: query || '',
-        sortBy: sort || '',
-        tag: paramsURL.tag || ''
-      })
-    )
-  }, [store.tasks.length, paramsURL.filter, paramsURL.tag, query, sort])
+  // useEffect(() => {
+  //   dispatch(
+  //     getTasks({
+  //       filter: paramsURL.filter || '',
+  //       q: query || '',
+  //       sortBy: sort || '',
+  //       tag: paramsURL.tag || ''
+  //     })
+  //   )
+  // }, [store.tasks.length, paramsURL.filter, paramsURL.tag, query, sort])
 
   return (
     // <Fragment>
@@ -97,7 +97,7 @@ const Index = () => {
               />
             ) : null}
 
-            <TaskSidebar
+            {/* <TaskSidebar
               store={store}
               params={params}
               addTask={addTask}
@@ -107,7 +107,7 @@ const Index = () => {
               selectTask={selectTask}
               deleteTask={deleteTask}
               handleTaskSidebar={handleTaskSidebar}
-            />
+            /> */}
           </div>
         </div>
       </div>

@@ -1,4 +1,16 @@
-import axios from 'axios'
+import {TOGGLE_NAV_BETWEEN_TEACHING_MY_CLASSES} from '../actionTypes/manageClassesTypes'
+
+// ** [UPDATED]
+export const toggleNavBeeetweenClasses = bool => {
+  return {
+      type : TOGGLE_NAV_BETWEEN_TEACHING_MY_CLASSES,
+      task : bool
+    }
+}
+
+// ** Re-order Tasks on drag
+export const reOrderTasks = tasks => dispatch => dispatch({ type: 'REORDER_TASKS', tasks })
+
 
 // ** Get Tasks
 export const getTasks = params => {
@@ -12,9 +24,6 @@ export const getTasks = params => {
     })
   }
 }
-
-// ** Re-order Tasks on drag
-export const reOrderTasks = tasks => dispatch => dispatch({ type: 'REORDER_TASKS', tasks })
 
 // ** ADD Task
 export const addTask = task => {
@@ -30,7 +39,6 @@ export const addTask = task => {
       .then(dispatch(getTasks(getState().todo.params)))
   }
 }
-
 // ** Update Tasks
 export const updateTask = task => {
   return (dispatch, getState) => {
