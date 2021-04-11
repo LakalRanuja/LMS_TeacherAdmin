@@ -63,7 +63,7 @@ const renderClient = row => {
 export const columns = [
   {
     name: 'Index No',
-    minWidth: '90px',
+    minWidth: '110px',
     selector: 'id',
     cell: row => row.id
   },
@@ -102,7 +102,7 @@ export const columns = [
           {renderClient(row)}
           <div className='d-flex flex-column'>
             <h6 className='user-name text-truncate mb-0'>{name}</h6>
-            <small className='text-truncate text-muted mb-0'>{email}</small>
+            {/* <small className='text-truncate text-muted mb-0'>{email}</small> */}
           </div>
         </div>
       )

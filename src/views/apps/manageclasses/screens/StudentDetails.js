@@ -11,7 +11,7 @@ import Sidebar from '../components/SidebarStudentDetails'
 // ** Store & Actions
 import { useDispatch, useSelector } from 'react-redux'
 import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } from '../store/actions/index'
-
+import '../components/styles/studentDetails.css'
 // ** Styles
 import '@styles/react/apps/app-todo.scss'
 
@@ -43,7 +43,7 @@ const StudentDetails = () => {
     // <Fragment>
     //   {/* <Card/> */}
     <>
-     <div className="col-12 bg-white">
+     <div className="col-12 bg-white overflow-auto">
          {store ? (
             <Tasks
               store={store}

@@ -1,5 +1,6 @@
 // ** React Imports
 import React, {useState, useEffect} from 'react'
+import { useSelector} from 'react-redux'
 
 import { Link } from 'react-router-dom'
 
@@ -11,12 +12,13 @@ import { Card, CardBody, CardText, Button, Row, Col, Container, Label, Input, Fo
 import { DollarSign, TrendingUp, User, Check, Star, ChevronDown, ChevronUp, Phone, Mail } from 'react-feather'
 
 import '../components/styles/taskStudentDetails.css'
-import StudentCardRow from '../components/StudentCardRow'
+import StudentCardRow from './StudentCardRow'
 
 const TasksStudentDetails = props => {
 
-  const [toggleUpperPanal, setToggleUpperPanal] = useState(false)
+  const [toggleUpperPanal, setToggleUpperPanal] = useState(true)
   const [inputOnChangeValueArray, setInputOnChangeValueArray] = useState([])
+  const teachingSideRequest = useSelector(state => state.manageClassess.toggleNavClasses)
 
   const subjectObjArray = [
                             {subject : "Mathematics", mark : 78, type : null, name : null}, 
@@ -154,42 +156,42 @@ const TasksStudentDetails = props => {
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="Mathematics">Mathematics</Label>
-                        <Input type= "text" name= "text" id= "Mathematics" placeholder= "" />
+                        <Input type= "text" name= "text" id= "Mathematics" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
 
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="science">Science</Label>
-                        <Input type= "text" name= "text" id= "science" placeholder= "" />
+                        <Input type= "text" name= "text" id= "science" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
 
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="english">English</Label>
-                        <Input type= "text" name= "text" id= "english" placeholder= "" />
+                        <Input type= "text" name= "text" id= "english" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
 
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="sinhala">Sinhala</Label>
-                        <Input type= "text" name= "text" id= "sinhala" placeholder= "" />
+                        <Input type= "text" name= "text" id= "sinhala" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
 
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="ict">ICT</Label>
-                        <Input type= "text" name= "text" id= "ict" placeholder= "" />
+                        <Input type= "text" name= "text" id= "ict" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
 
                     <div  className="col-3 mb-0">
                       <FormGroup>
                         <Label for="art">Art</Label>
-                        <Input type= "text" name= "text" id= "art" placeholder= "" />
+                        <Input type= "text" name= "text" id= "art" disabled= {teachingSideRequest} placeholder= "" />
                       </FormGroup>
                     </div>
                      
@@ -197,9 +199,9 @@ const TasksStudentDetails = props => {
                 
                  {/* button group */}
                 <div className="p-0 my-1 text-left col-12">
-                    <Button size="sm" outline  color="primary"  className="mr-1">submit</Button>
-                    <Button size="sm" outline  color="primary"  className="mr-1">update</Button>
-                    <Button size="sm" outline  color="secondary"  className="mr-1">cancel</Button>
+                    <Button size="sm" outline  color="primary"  disabled= {teachingSideRequest} className="mr-1">submit</Button>
+                    <Button size="sm" outline  color="primary"  disabled= {teachingSideRequest} className="mr-1">update</Button>
+                    <Button size="sm" outline  color="secondary"  disabled= {teachingSideRequest} className="mr-1">cancel</Button>
                 </div>
 
                 {/* average, marks , total */}

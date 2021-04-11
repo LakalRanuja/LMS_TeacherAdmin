@@ -100,12 +100,12 @@ const UserAccountTab = ({ selectedUser }) => {
       <Col sm='12'>
         <Form onSubmit={e => e.preventDefault()}>
           <Row>
-            <Col md='4' sm='12'>
+            {/* <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='username'>Username</Label>
                 <Input type='text' id='username' placeholder=''  defaultValue={''}  />
               </FormGroup>
-            </Col>
+            </Col> */}
             <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='name'>First Name</Label>

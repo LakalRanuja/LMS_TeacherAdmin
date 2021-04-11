@@ -97,7 +97,7 @@ export const columns = [
           >
             <span className='font-weight-bold'>{row.fullName}</span>
           </Link>
-          <small className='text-truncate text-muted mb-0'>@{row.username}</small>
+          {/* <small className='text-truncate text-muted mb-0'>@{row.username}</small> */}
         </div>
       </div>
     )

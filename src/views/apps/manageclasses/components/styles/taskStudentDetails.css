@@ -2,9 +2,9 @@
      margin-top: 12px;
 }
 
-._myScrollStype {
+/* ._myScrollStype {
      height : 290px;
-}
+} */
 .myStyle__termBtnGroup {
      margin-top: 5px;
 }
@@ -15,3 +15,4 @@
 .my_style__toggleBtn {
      background: linear-gradient(to top left, #978ef4 0%, #ffffff 100%);
 }
+
