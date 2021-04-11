@@ -7,7 +7,6 @@ import classnames from 'classnames'
 // ** Todo App Components
 import Tasks from '../components/Tasks'
 import Sidebar from '../components/Sidebar'
-import TaskSidebar from '../components/TaskSidebar'
 // import Card from '../../ui-elements/cards/advance/CardCongratulations'
 
 // ** Store & Actions
@@ -96,18 +95,6 @@ const Index = () => {
                 handleTaskSidebar={handleTaskSidebar}
               />
             ) : null}
-
-            {/* <TaskSidebar
-              store={store}
-              params={params}
-              addTask={addTask}
-              dispatch={dispatch}
-              open={openTaskSidebar}
-              updateTask={updateTask}
-              selectTask={selectTask}
-              deleteTask={deleteTask}
-              handleTaskSidebar={handleTaskSidebar}
-            /> */}
           </div>
         </div>
       </div>

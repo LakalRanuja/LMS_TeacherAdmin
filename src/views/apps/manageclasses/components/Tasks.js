@@ -52,16 +52,16 @@ const Tasks = props => {
   // [UPDATE]
   let header = ''
   const teachingClassArray = [
-      {grade : "12", gradeLetter : "A", subject : "Mathematics" },
-      {grade : "13", gradeLetter : "C", subject : "Sinhala" },
-      {grade : "13", gradeLetter : "D", subject : "Mathematics" },
-      {grade : "12", gradeLetter : "E", subject : "Science" },
-      {grade : "13", gradeLetter : "B", subject : "Mathematics" }
+      {grade : "12", gradeLetter : "A", subject : "Mathematics", to : "/apps/user/view/1" },
+      {grade : "13", gradeLetter : "C", subject : "Sinhala", to :  "/apps/user/view/1" },
+      {grade : "13", gradeLetter : "D", subject : "Mathematics", to :  "/apps/user/view/1" },
+      {grade : "12", gradeLetter : "E", subject : "Science", to :  "/apps/user/view/1" },
+      {grade : "13", gradeLetter : "B", subject : "Mathematics", to :  "/apps/user/view/1" }
     ]
 
   const myClassArray = [
-      {grade : "12", gradeLetter : "A", subject : null },
-      {grade : "13", gradeLetter : "C", subject : null }
+      {grade : "12", gradeLetter : "A", subject : null, to : "/apps/user/list" },
+      {grade : "13", gradeLetter : "C", subject : null, to : "/apps/user/list" }
     ]
  
   if (state.toggleNavClasses) {
@@ -86,7 +86,7 @@ const Tasks = props => {
                             <div className="overflow-auto col-12  myStyle__scrollbar">
                               {
                                 teachingClassArray.map((item) => {
-                                  return <TaskListRow grade = {item.grade} gradeLetter= {item.gradeLetter} subject = {item.subject} />
+                                  return <TaskListRow grade = {item.grade} gradeLetter = {item.gradeLetter} subject = {item.subject} to = {item.to} />
                                 })
                               }
                           </div>
@@ -101,7 +101,7 @@ const Tasks = props => {
                             <div className="overflow-auto col-12  myStyle__scrollbar">
                             {
                               myClassArray.map((item) => {
-                                  return <TaskListRow grade = {item.grade} gradeLetter= {item.gradeLetter} subject = {item.subject} />
+                                  return <TaskListRow grade = {item.grade} gradeLetter= {item.gradeLetter} subject = {item.subject} to={item.to} />
                                 })
                               }
                           </div>

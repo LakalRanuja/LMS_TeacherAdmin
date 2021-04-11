@@ -26,7 +26,7 @@ import '@styles/react/libs/tables/react-dataTable-component.scss'
 // ** Table Header
 const CustomHeader = ({ toggleSidebar, handlePerPage, rowsPerPage, handleFilter, searchTerm }) => {
   return (
-    <div className='invoice-list-table-header w-100 mr-1 ml-50 mt-2 mb-75'>
+    <div className='invoice-list-table-header w-100 mr-1 ml-50 mt-1 mb-75'>
       <Row>
         <Col xl='6' className='d-flex align-items-center p-0'>
           <div className='d-flex align-items-center w-100'>
@@ -66,9 +66,9 @@ const CustomHeader = ({ toggleSidebar, handlePerPage, rowsPerPage, handleFilter,
               onChange={e => handleFilter(e.target.value)}
             />
           </div>
-          <Button.Ripple color='primary' onClick={toggleSidebar}>
+          {/* <Button.Ripple color='primary' onClick={toggleSidebar}>
             Manage Student
-          </Button.Ripple>
+          </Button.Ripple> */}
         </Col>
       </Row>
     </div>
