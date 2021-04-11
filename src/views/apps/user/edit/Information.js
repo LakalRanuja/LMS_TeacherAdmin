@@ -5,7 +5,7 @@ import { useState } from 'react'
 import classnames from 'classnames'
 import Cleave from 'cleave.js/react'
 import Flatpickr from 'react-flatpickr'
-import { User, MapPin } from 'react-feather'
+import { User, MapPin, Hash } from 'react-feather'
 import 'cleave.js/dist/addons/cleave-phone.us'
 import { useForm, Controller } from 'react-hook-form'
 import { Row, Col, Button, Label, FormGroup, Input, CustomInput, Form } from 'reactstrap'
@@ -55,14 +55,14 @@ const UserInfoTab = () => {
         </Col>
         <Col lg='4' md='6'>
           <FormGroup>
-            <Label for='mobileNumber'>Mobile</Label>
+            <Label for='mobileNumber'>Contact</Label>
             <Controller
               as={Cleave}
               control={control}
               id='mobileNumber'
               name='mobileNumber'
-              defaultValue='+6595895857'
-              placeholder='1 234 567 8900'
+              defaultValue=''
+              placeholder=''
               options={{ phone: true, phoneRegionCode: 'US' }}
               className={classnames('form-control', {
                 'is-invalid': data !== null && (data.mobileNumber === undefined || data.mobileNumber === null)
@@ -70,7 +70,25 @@ const UserInfoTab = () => {
             />
           </FormGroup>
         </Col>
+
         <Col lg='4' md='6'>
+          <FormGroup>
+            <Label for='mobileNumber'>Nic</Label>
+            <Controller
+              as={Cleave}
+              control={control}
+              id='mobileNumber'
+              name='mobileNumber'
+              defaultValue=''
+              placeholder=''
+              options={{ phone: true, phoneRegionCode: 'US' }}
+              className={classnames('form-control', {
+                'is-invalid': data !== null && (data.mobileNumber === undefined || data.mobileNumber === null)
+              })}
+            />
+          </FormGroup>
+        </Col>
+        {/* <Col lg='4' md='6'>
           <FormGroup>
             <Label for='website'>Website</Label>
             <Input
@@ -81,8 +99,8 @@ const UserInfoTab = () => {
               defaultValue='https://rowboat.com/insititious/Angelo'
             />
           </FormGroup>
-        </Col>
-        <Col lg='4' md='6'>
+        </Col> */}
+        {/* <Col lg='4' md='6'>
           <FormGroup>
             <Label for='languages'>Languages</Label>
             <Controller
@@ -103,7 +121,7 @@ const UserInfoTab = () => {
               <option value='Sanskrit'>Sanskrit</option>
             </Controller>
           </FormGroup>
-        </Col>
+        </Col> */}
         <Col lg='4' md='6'>
           <FormGroup>
             <label className='d-block mb-1'>Gender</label>
@@ -148,7 +166,7 @@ const UserInfoTab = () => {
             </FormGroup>
           </FormGroup>
         </Col>
-        <Col lg='4' md='6'>
+        {/* <Col lg='4' md='6'>
           <FormGroup>
             <label className='d-block mb-1'>Contact Options</label>
             <FormGroup>
@@ -173,7 +191,7 @@ const UserInfoTab = () => {
               <CustomInput inline type='checkbox' name='terms' id='phoneTerms' value='Phone' label='Phone' />
             </FormGroup>
           </FormGroup>
-        </Col>
+        </Col> */}
       </Row>
       <Row>
         <Col sm='12'>
@@ -188,39 +206,37 @@ const UserInfoTab = () => {
             <Input
               id='address-1'
               name='address1'
-              defaultValue='A-65, Belvedere Streets'
-              innerRef={register({ required: true })}
-              className={classnames({
-                'is-invalid': errors.address1
-              })}
+              defaultValue=''
             />
           </FormGroup>
         </Col>
         <Col lg='4' md='6'>
           <FormGroup>
             <Label for='address-2'>Address Line 2</Label>
-            <Input placeholder='A-65, Belvedere Streets' id='address-2' name='address-2' />
+            <Input placeholder='' id='address-2' name='address-2' />
           </FormGroup>
         </Col>
+       
+        <Col lg='4' md='6'>
+          <FormGroup>
+            <Label for='city'>City</Label>
+            <Input defaultValue='' placeholder='' id='city' name='city' />
+          </FormGroup>
+        </Col>
+
         <Col lg='4' md='6'>
           <FormGroup>
             <Label for='postcode'>Postcode</Label>
             <Input
               id='postcode'
               name='postcode'
-              placeholder='597626'
+              placeholder=''
               innerRef={register({ required: true })}
               invalid={errors.postcode && true}
             />
           </FormGroup>
         </Col>
-        <Col lg='4' md='6'>
-          <FormGroup>
-            <Label for='city'>City</Label>
-            <Input defaultValue='Manhattan' placeholder='Manhattan' id='city' name='city' />
-          </FormGroup>
-        </Col>
-        <Col lg='4' md='6'>
+        {/* <Col lg='4' md='6'>
           <FormGroup>
             <Label for='state'>State</Label>
             <Input
@@ -232,8 +248,8 @@ const UserInfoTab = () => {
               invalid={errors.state && true}
             />
           </FormGroup>
-        </Col>
-        <Col lg='4' md='6'>
+        </Col> */}
+        {/* <Col lg='4' md='6'>
           <FormGroup>
             <Label for='country'>Country</Label>
             <Input
@@ -244,16 +260,56 @@ const UserInfoTab = () => {
               invalid={errors.country && true}
             />
           </FormGroup>
+        </Col> */}
+       
+      </Row>
+
+      <Row>
+        <Col sm='12'>
+          <h4 className='mb-1 mt-2'>
+            <Hash size={20} className='mr-50' />
+            <span className='align-middle'>Parent Information</span>
+          </h4>
         </Col>
-        <Col className='d-flex flex-sm-row flex-column mt-2'>
-          <Button type='submit' color='primary' className='mb-1 mb-sm-0 mr-0 mr-sm-1'>
-            Save Changes
-          </Button>
-          <Button type='reset' color='secondary' outline>
-            Reset
-          </Button>
+        <Col lg='4' md='6'>
+          <FormGroup>
+            <Label for='address-1'>Parent Full Name</Label>
+            <Input
+              id='address-1'
+              name='address1'
+              // defaultValue=''
+              placeholder=''     
+            />
+          </FormGroup>
+        </Col>
+        <Col lg='4' md='6'>
+          <FormGroup>
+            <Label for='mobileNumber'>Parent Contact</Label>
+            <Controller
+              as={Cleave}
+              control={control}
+              id='mobileNumber2'
+              name='mobileNumber2'
+              defaultValue=''
+              placeholder=''
+              options={{ phone: true, phoneRegionCode: 'US' }}
+              className={classnames('form-control', {
+                'is-invalid': data !== null && (data.mobileNumber === undefined || data.mobileNumber === null)
+              })}
+            />
+          </FormGroup>
         </Col>
       </Row>
+      <Row>
+        <Col className='d-flex flex-sm-row flex-column mt-2'>
+            <Button type='submit' color='primary' className='mb-1 mb-sm-0 mr-0 mr-sm-1'>
+              Save Changes
+            </Button>
+            <Button type='reset' color='secondary' outline>
+              Reset
+            </Button>
+          </Col>
+        </Row>
     </Form>
   )
 }

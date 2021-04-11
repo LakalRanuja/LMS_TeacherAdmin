@@ -16,6 +16,7 @@ import StudentCardRow from '../components/StudentCardRow'
 const TasksStudentDetails = props => {
 
   const [toggleUpperPanal, setToggleUpperPanal] = useState(false)
+  const [inputOnChangeValueArray, setInputOnChangeValueArray] = useState([])
 
   const subjectObjArray = [
                             {subject : "Mathematics", mark : 78, type : null, name : null}, 
@@ -80,7 +81,7 @@ const TasksStudentDetails = props => {
                             {'madushanka2021@gmail.com'}
                           </CardText>
                         
-                          <div className='d-md-flex flex-wrap align-items-center mt-1'>
+                          {/* <div className='d-md-flex flex-wrap align-items-center mt-1'>
                             <Button.Ripple className="mr-1" tag={Link} to={`/apps/user/edit/`} color='primary'>
                               Edit 
                             </Button.Ripple>
@@ -88,7 +89,7 @@ const TasksStudentDetails = props => {
                             <Button.Ripple tag={Link} to={`/apps/user/edit/`} color='light'>
                               Delete
                             </Button.Ripple>
-                          </div>
+                          </div> */}
 
                       </div>
                     
@@ -96,7 +97,7 @@ const TasksStudentDetails = props => {
                   </div>
                 </div>
                 <div className=" col-12">
-                            <button className="btn btn-light col-12 p-0" onClick={() => setToggleUpperPanal(!toggleUpperPanal)}>
+                            <button className="btn my_style__toggleBtn col-12 p-0" onClick={() => setToggleUpperPanal(!toggleUpperPanal)}>
                                {toggleUpperPanal ?  <ChevronUp className='' size={16} /> :  <ChevronDown className='' size={16} />}
                             </button>
                           </div>
@@ -106,60 +107,13 @@ const TasksStudentDetails = props => {
                 
                 <div className='user-info-wrapper'>            
                 <StudentCardRow iconName = "Star" title = "FullName" detail= "Ruvindu Madushanka" />
-                  
-                  <div className='d-flex flex-wrap align-items-left my-50'>
-                    <div className='user-info-title col-12 col-md-3'>
-                      <Star className='mr-1' size={14} />
-                      <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                        NIC No
-                      </CardText>
-                    </div>
-                    <CardText className='text-capitalize col-12 col-md-8 pl-3 pl-md-0 '>
-                      {"9977665521V"}
-                    </CardText>
-                  </div>
-
-                  <div className='d-flex flex-wrap align-items-left my-50'>
-                    <div className='user-info-title col-12 col-md-3'>
-                      <TrendingUp className='mr-1' size={14} />
-                      <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                        Date of Birth
-                      </CardText>
-                    </div>
-                    <CardText className='text-capitalize col-12 col-md-8 pl-3 pl-md-0 '>
-                      {'2000/01/01'}
-                    </CardText>
-                  </div>
-
-                  <div className='d-flex flex-wrap align-items-left my-50'>
-                    <div className='user-info-title col-12 col-md-3'>
-                      <Mail className='mr-1' size={14} />
-                      <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                        Email
-                      </CardText>
-                    </div>
-                    <CardText className='col-12 col-md-8 pl-3 pl-md-0  '>{"madushanka2021@gmail.com"}</CardText>
-                  </div>
-
-                  <div className='d-flex flex-wrap align-items-left'>
-                    <div className='user-info-title col-12 col-md-3 '>
-                      <Phone className='mr-1 ' size={14} />
-                      <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                        Contact
-                      </CardText>
-                    </div>
-                    <CardText className='col-12 col-md-8 pl-3 pl-md-0 '>{ '(+94) 772233121'}</CardText>
-                  </div>
-
-                  <div className='d-flex flex-wrap align-items-left my-50'>
-                    <div className='user-info-title  col-12 col-md-3 '>
-                      <Mail className=' mr-1' size={14} />
-                      <CardText tag='span' className='user-info-title font-weight-bold mb-0'>
-                        Address
-                      </CardText>
-                    </div>
-                    <CardText className=' col-12 col-md-8 pl-3 pl-md-0 '>{"199 / A / 22, Sananayaka, Kuruduwaththa, Araliya Road, Colombo, 56000"}</CardText>
-                  </div>
+                <StudentCardRow iconName = "Hash" title = "NIC No" detail= "98543334V" />
+                <StudentCardRow iconName = "TrendingUp" title = "Date of Birth" detail= "2000/01/01" />
+                <StudentCardRow iconName = "Send" title = "Email" detail= "madushanka2021@gmail.com" />                
+                <StudentCardRow iconName = "Phone" title = "Contact" detail= "(+94) 772233121" />                
+                <StudentCardRow iconName = "User" title = "Parent Full Name" detail= "Ashitha S Madushanka" />                
+                <StudentCardRow iconName = "PhoneCall" title = "Parent Contact" detail= "(+94) 787655121" />                
+                <StudentCardRow iconName = "Mail" title = "Address" detail= "199 / A / 22, Sananayaka, Kuruduwaththa, Araliya Road, Colombo, 56000" />                
 
                 </div>
               </Col> : null}
@@ -183,23 +137,69 @@ const TasksStudentDetails = props => {
                 <div className = "_myScrollStype overflow-auto col-12">
                   <div className = "row mt-1  ">
                     {/* { subjectObjArray.map((item, index) => <TextField subject = {item.subject} placeholder="..." key = {index} mark={item.mark}/>)  } */}
-                    { subjectObjArray.map((item, index) => {
+                 
+                    {/* { subjectObjArray.map((item, index) => {
                                 return   <div key={`${index}${item.subject}`} className="col-3 mb-0">
                                             <FormGroup>
                                                   <Label for={item.subject}>{item.subject}</Label>
-                                                  <Input  type={item.type ? item.type : "email"} value={item.mark ? item.mark : ""}  name={item.name ?  item.name : "email"} id={item.subject ? item.subject : ""} placeholder={"........"} />
+                                                  <Input  type={item.type ? item.type : "email"} 
+                                                      value={inputOnChangeValueArray[index] ? inputOnChangeValueArray[index] : item.mark ? item.mark : "" }  
+                                                      name={item.name ?  item.name : "email"} 
+                                                      id={item.subject ? item.subject : ""} 
+                                                      placeholder={"........"}
+                                                      onChange={(item) => setInputOnChangeValueArray([...inputOnChangeValueArray, item])} />
                                             </FormGroup>
                                           </div>
-                    })  }
+                    })  } */}
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="Mathematics">Mathematics</Label>
+                        <Input type= "text" name= "text" id= "Mathematics" placeholder= "" />
+                      </FormGroup>
+                    </div>
+
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="science">Science</Label>
+                        <Input type= "text" name= "text" id= "science" placeholder= "" />
+                      </FormGroup>
+                    </div>
+
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="english">English</Label>
+                        <Input type= "text" name= "text" id= "english" placeholder= "" />
+                      </FormGroup>
+                    </div>
+
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="sinhala">Sinhala</Label>
+                        <Input type= "text" name= "text" id= "sinhala" placeholder= "" />
+                      </FormGroup>
+                    </div>
+
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="ict">ICT</Label>
+                        <Input type= "text" name= "text" id= "ict" placeholder= "" />
+                      </FormGroup>
+                    </div>
+
+                    <div  className="col-3 mb-0">
+                      <FormGroup>
+                        <Label for="art">Art</Label>
+                        <Input type= "text" name= "text" id= "art" placeholder= "" />
+                      </FormGroup>
+                    </div>
                      
                   </div>
                 
-
                  {/* button group */}
                 <div className="p-0 my-1 text-left col-12">
                     <Button size="sm" outline  color="primary"  className="mr-1">submit</Button>
                     <Button size="sm" outline  color="primary"  className="mr-1">update</Button>
-                    <Button size="sm" outline  color="primary" disabled className="mr-1">cancel</Button>
+                    <Button size="sm" outline  color="secondary"  className="mr-1">cancel</Button>
                 </div>
 
                 {/* average, marks , total */}

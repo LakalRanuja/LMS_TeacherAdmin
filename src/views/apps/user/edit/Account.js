@@ -103,22 +103,28 @@ const UserAccountTab = ({ selectedUser }) => {
             <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='username'>Username</Label>
-                <Input type='text' id='username' placeholder='Username' defaultValue={userData && userData.username} />
+                <Input type='text' id='username' placeholder=''  defaultValue={''}  />
               </FormGroup>
             </Col>
             <Col md='4' sm='12'>
               <FormGroup>
-                <Label for='name'>Name</Label>
-                <Input type='text' id='name' placeholder='Name' defaultValue={userData && userData.fullName} />
+                <Label for='name'>First Name</Label>
+                <Input type='text' id='name' placeholder=''  defaultValue={''} />
+              </FormGroup>
+            </Col>
+            <Col md='4' sm='12'>
+              <FormGroup>
+                <Label for='name'>Last Name</Label>
+                <Input type='text' id='name' placeholder=''  defaultValue={''} />
               </FormGroup>
             </Col>
             <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='email'>Email</Label>
-                <Input type='text' id='email' placeholder='Email' defaultValue={userData && userData.email} />
+                <Input type='text' id='email' placeholder='' defaultValue={''} />
               </FormGroup>
             </Col>
-            <Col md='4' sm='12'>
+            {/* <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='status'>Status</Label>
                 <Input type='select' name='status' id='status' defaultValue={userData && userData.status}>
@@ -127,7 +133,7 @@ const UserAccountTab = ({ selectedUser }) => {
                   <option value='inactive'>Inactive</option>
                 </Input>
               </FormGroup>
-            </Col>
+            </Col> */}
             {/* <Col md='4' sm='12'>
               <FormGroup>
                 <Label for='role'>Role</Label>
