@@ -184,8 +184,26 @@ const AppRoutes = [
     // meta: {
     //   navLink: '/apps/manageclasses'
     // }
+  },
+  {
+    path: '/apps/managesubject/view',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managesubject/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
+  }, 
+  {
+    path: '/apps/managesubjects/view/content',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managesubject/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
   }
-  
+
 ]
 
 export default AppRoutes

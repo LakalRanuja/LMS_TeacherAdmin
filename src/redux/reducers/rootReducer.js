@@ -15,6 +15,7 @@ import ecommerce from '@src/views/apps/ecommerce/store/reducer'
 import dataTables from '@src/views/tables/data-tables/store/reducer'
 
 import manageClassess from '@src/views/apps/manageclasses/store/reducer'
+import manageSubjectContent from '@src/views/apps/managesubject/store/reducer'
 
 const rootReducer = combineReducers({
   auth,
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
   calendar,
   ecommerce,
   dataTables,
-  manageClassess
+  manageClassess,
+  manageSubjectContent
 })
 
 export default rootReducer
