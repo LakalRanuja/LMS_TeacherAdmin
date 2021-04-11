@@ -173,7 +173,44 @@ const AppRoutes = [
     meta: {
       navLink: '/apps/user/view'
     }
+  },
+  {
+    path: '/apps/manageclasses/view',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/manageclasses/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
+  },
+  {
+    path: '/apps/manageclass/view/studentdetails',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/manageclasses/screens/StudentDetails'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
+  },
+  {
+    path: '/apps/managesubject/view',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managesubject/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
+  }, 
+  {
+    path: '/apps/managesubjects/view/content',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managesubject/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
   }
+
 ]
 
 export default AppRoutes

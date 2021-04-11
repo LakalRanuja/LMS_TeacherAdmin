@@ -46,7 +46,7 @@ const CustomHeader = ({ handleFilter, value, handleStatusValue, statusValue, han
           lg='6'
           className='actions-right d-flex align-items-center justify-content-lg-end flex-lg-nowrap flex-wrap mt-lg-0 mt-1 pr-lg-1 p-0'
         >
-          {/* <div className='d-flex align-items-center'>
+          <div className='d-flex align-items-center'>
             <Label for='search-invoice'>Search</Label>
             <Input
               id='search-invoice'
@@ -54,10 +54,10 @@ const CustomHeader = ({ handleFilter, value, handleStatusValue, statusValue, han
               type='text'
               value={value}
               onChange={e => handleFilter(e.target.value)}
-              placeholder='Search Invoice'
+              placeholder='Jhon wick'
             />
-          </div> */}
-          <Input className='w-auto ' type='select' value={statusValue} onChange={handleStatusValue}>
+          </div>
+          {/* <Input className='w-auto ' type='select' value={statusValue} onChange={handleStatusValue}>
             <option value=''>Select Status</option>
             <option value='downloaded'>Downloaded</option>
             <option value='draft'>Draft</option>
@@ -65,7 +65,7 @@ const CustomHeader = ({ handleFilter, value, handleStatusValue, statusValue, han
             <option value='partial payment'>Partial Payment</option>
             <option value='past due'>Past Due</option>
             <option value='partial payment'>Partial Payment</option>
-          </Input>
+          </Input> */}
         </Col>
       </Row>
     </div>

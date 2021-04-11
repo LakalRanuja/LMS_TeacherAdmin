@@ -1,0 +1,46 @@
+
+.myStyle__scrollbar {
+     height : 430px
+}
+
+::-webkit-scrollbar {
+     display: none;
+     }
+
+
+     /* .myStyle__container {
+          height : 1000px;
+     } */
+     
+     .myStyle__hr {
+          border-bottom : 1px solid rgb(232, 224, 224);    
+          /* width : 750px; */
+     }
+     
+     .myStyle__list {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          border-radius: 5px;
+          margin-left:1px;
+          margin-top: 3px;
+          
+     }
+     
+     .mystyle__col__text {
+          margin-top: 5px;
+          
+     }
+
+
+     .myContainer {
+          margin-left:5px;
+     }
+
+     .myTableContainer {
+          padding-top: 10px;
+          height : 400px;
+          margin-left:5px;
+     }
+    /* .myStyle__dropDown {
+         width : 400px
+    } */

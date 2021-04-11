@@ -67,6 +67,20 @@ const statusObj = {
 }
 
 export const columns = [
+  // {
+  //   name: '#',
+  //   minWidth: '50px',
+  //   selector: 'email',
+  //   sortable: true,
+  //   cell: row => row.id
+  // },
+  {
+    name: 'Index No',
+    minWidth: '130px',
+    selector: 'email',
+    sortable: true,
+    cell: row => `00${row.id}`
+  },
   {
     name: 'Student',
     minWidth: '297px',
@@ -83,43 +97,43 @@ export const columns = [
           >
             <span className='font-weight-bold'>{row.fullName}</span>
           </Link>
-          <small className='text-truncate text-muted mb-0'>@{row.username}</small>
+          {/* <small className='text-truncate text-muted mb-0'>@{row.username}</small> */}
         </div>
       </div>
     )
   },
   {
     name: 'Email',
-    minWidth: '320px',
+    minWidth: '280px',
     selector: 'email',
     sortable: true,
     cell: row => row.email
   },
-  // {
-  //   name: 'Role',
-  //   minWidth: '172px',
-  //   selector: 'role',
-  //   sortable: true,
-  //   cell: row => renderRole(row)
-  // },
-  // {
-  //   name: 'Type',
-  //   minWidth: '138px',
-  //   selector: 'currentPlan',
-  //   sortable: true,
-  //   cell: row => <span className='text-capitalize'>{row.currentPlan}</span>
-  // },
   {
-    name: 'Status',
-    minWidth: '138px',
-    selector: 'status',
+    name: 'Parent Full Name',
+    minWidth: '200px',
+    selector: 'parentName',
     sortable: true,
-    cell: row => (
-      <Badge className='text-capitalize' color={statusObj[row.status]} pill>
-        {row.status}
-      </Badge>
-    )
+    cell: row => row.fullName
   },
+  {
+    name: 'Parent Contact Number',
+    minWidth: '190px',
+    selector: 'parentContact',
+    sortable: true,
+    cell: row => "077 3345734"
+  },
+  // {
+  //   name: 'Status',
+  //   minWidth: '138px',
+  //   selector: 'status',
+  //   sortable: true,
+  //   cell: row => (
+  //     <Badge className='text-capitalize' color={statusObj[row.status]} pill>
+  //       {row.status}
+  //     </Badge>
+  //   )
+  // },
   {
     name: 'Actions',
     minWidth: '100px',
@@ -131,16 +145,17 @@ export const columns = [
         <DropdownMenu right>
           <DropdownItem
             tag={Link}
-            to={`/apps/user/view/${row.id}`}
+            to={`/apps/manageclass/view/studentdetails`}
             className='w-100'
             onClick={() => store.dispatch(getUser(row.id))}
+            // onClick={() => store.dispatch(getUser(row.id))}
           >
             <FileText size={14} className='mr-50' />
             <span className='align-middle'>Details</span>
           </DropdownItem>
           <DropdownItem
             tag={Link}
-            to={`/apps/user/edit/${row.id}`}
+            to={`/apps/user/edit/1`}
             className='w-100'
             onClick={() => store.dispatch(getUser(row.id))}
           >
