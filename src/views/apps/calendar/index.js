@@ -30,11 +30,11 @@ import '@styles/react/apps/app-calendar.scss'
 
 // ** CalendarColors
 const calendarsColor = {
-  Business: 'primary',
-  Holiday: 'success',
-  Personal: 'danger',
-  Family: 'warning',
-  ETC: 'info'
+  10: 'primary',
+  9: 'success',
+  MyClass: 'danger',
+  8: 'warning',
+  7: 'info'
 }
 
 const CalendarComponent = () => {

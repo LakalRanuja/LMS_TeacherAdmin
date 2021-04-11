@@ -6,20 +6,20 @@ import { Card, CardHeader, CardTitle, CardBody, CardText, Row, Col, Media} from 
 const StatsCard = ({ cols }) => {
   const data = [
     {
-      title: '100',
-      subtitle: 'Availability',
+      title: '11 A',
+      subtitle: 'Class',
       color: 'light-primary',
       icon: <TrendingUp size={24} />
     },
     {
-      title: '2200',
-      subtitle: 'Students',
+      title: 'English',
+      subtitle: 'Subject',
       color: 'light-info',
       icon: <User size={24} />
     },
     {
-      title: '25',
-      subtitle: 'Classes',
+      title: '6',
+      subtitle: 'No. of Classes',
       color: 'light-danger',
       icon: <Command size={24} />
     }
@@ -34,14 +34,14 @@ const StatsCard = ({ cols }) => {
           key={index}
           {...cols}
           className={classnames({
-            [`mb-2 mb-${margin[0]}-0`]: index !== data.length - 1
+            [`ml-2 mb-${margin[0]}-0`]: index !== data.length - 1
           })}
         >
-          <Media>
+          <Media style={{position: 'relative', left: 20}}>
             <Avatar color={item.color} icon={item.icon} className='mr-2' />
-            <Media className='my-auto' body>
+            <Media className='my-auto' body >
               <h4 className='font-weight-bolder mb-0'>{item.title}</h4>
-              <CardText className='font-small-3 mb-0'>{item.subtitle}</CardText>
+              <CardText className='font-small-4 mb-0' style={{width: 100}}>{item.subtitle}</CardText>
             </Media>
           </Media>
         </Col>

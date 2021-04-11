@@ -139,7 +139,7 @@ const data = {
     createdTime: 'May 24, 2020',
     blogTitle: 'Sahan Josep',
     blogCategories: [
-      { value: 'sahani', label: 'Sahani' }
+      { value: '11', label: '11' }
       // { value: 'gaming', label: 'Gaming' }
     ],
     slug: 'the-best-features-coming-to-ios-and-web-design',

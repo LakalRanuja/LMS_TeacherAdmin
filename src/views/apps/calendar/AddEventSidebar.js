@@ -11,7 +11,9 @@ import Flatpickr from 'react-flatpickr'
 import { X, Check, Trash } from 'react-feather'
 import Select, { components } from 'react-select'
 import { useForm, Controller } from 'react-hook-form'
-import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, CustomInput, Input, Form } from 'reactstrap'
+import { Button, Modal, ModalHeader, ModalBody, FormGroup, Label, CustomInput, Input, Form, Media } from 'reactstrap'
+
+import avatar from '../../../assets/images/icons/pdf.png'
 
 // ** Utils
 import { selectThemeColors, isObjEmpty } from '@utils'
@@ -64,29 +66,47 @@ const AddEventSidebar = props => {
   const [url, setUrl] = useState('')
   const [desc, setDesc] = useState('')
   const [title, setTitle] = useState('')
+  const [lessonOption, setLessons] = useState({})
   const [guests, setGuests] = useState({})
   const [allDay, setAllDay] = useState(false)
   const [location, setLocation] = useState('')
   const [endPicker, setEndPicker] = useState(new Date())
   const [startPicker, setStartPicker] = useState(new Date())
-  const [value, setValue] = useState([{ value: 'Business', label: 'Business', color: 'primary' }])
+  const [value, setValue] = useState([{ value: '10', label: '10', color: 'primary' }])
 
   // ** Select Options
   const options = [
-    { value: 'Business', label: 'Business', color: 'primary' },
-    { value: 'Personal', label: 'Personal', color: 'danger' },
-    { value: 'Family', label: 'Family', color: 'warning' },
-    { value: 'Holiday', label: 'Holiday', color: 'success' },
-    { value: 'ETC', label: 'ETC', color: 'info' }
+    { value: '10', label: '10', color: 'primary' },
+    { value: '11', label: '11', color: 'danger' },
+    { value: '9', label: '9', color: 'warning' },
+    { value: '8', label: '8', color: 'success' },
+    { value: '7', label: '7', color: 'info' }
   ]
 
   const guestsOptions = [
-    { value: 'Donna Frank', label: 'Donna Frank', avatar: img1 },
-    { value: 'Jane Foster', label: 'Jane Foster', avatar: img2 },
-    { value: 'Gabrielle Robertson', label: 'Gabrielle Robertson', avatar: img3 },
-    { value: 'Lori Spears', label: 'Lori Spears', avatar: img4 },
-    { value: 'Sandy Vega', label: 'Sandy Vega', avatar: img5 },
-    { value: 'Cheryl May', label: 'Cheryl May', avatar: img6 }
+    { value: 'Donna Frank', label: 'Donna Frank'},
+    { value: 'Jane Foster', label: 'Jane Foster'},
+    { value: 'Gabrielle Robertson', label: 'Gabrielle Robertson'},
+    { value: 'Lori Spears', label: 'Lori Spears'},
+    { value: 'Sandy Vega', label: 'Sandy Vega'},
+    { value: 'Cheryl May', label: 'Cheryl May'}
+  ]
+  const lessons = [
+    { value: 'Real Numbers ', label: 'Real Numbers '},
+    { value: 'Indices and Logarithms -I', label: 'Indices and Logarithms -I'},
+    { value: 'Binomial Expressions', label: 'Binomial Expressions'},
+    { value: 'Volume of Solids', label: 'Volume of Solids'},
+    { value: 'Algebraic Fractions', label: 'Algebraic Fractions'},
+    { value: 'Surface Area of Solids', label: 'Surface Area of Solids'}
+  ]
+
+  const content = [
+    { value: 'Rational Numbers ', label: 'Rational Numbers '},
+    { value: 'Real Numbers', label: 'Real Numbers'},
+    { value: 'Fractional Indices of a Power', label: 'Fractional Indices of a Power'},
+    { value: 'Laws of logarithms', label: 'Laws of logarithms'},
+    { value: 'Logarithms', label: 'Logarithms'},
+    { value: 'Applications of logarithms', label: 'Applications of logarithms'}
   ]
 
   // ** Custom select components
@@ -103,11 +123,30 @@ const AddEventSidebar = props => {
     return (
       <components.Option {...props}>
         <div className='d-flex flex-wrap align-items-center'>
-          <Avatar className='my-0 mr-1' size='sm' img={data.avatar} />
+          {/* <Avatar className='my-0 mr-1' size='sm' img={data.avatar} /> */}
           <div>{data.label}</div>
         </div>
       </components.Option>
     )
+  }
+
+  const LessonComponent = ({ data, ...props }) => {
+    return (
+      <components.Option {...props}>
+        <div className='d-flex flex-wrap align-items-center'>
+          <div>{data.label}</div>
+        </div>
+      </components.Option>
+    )
+  }
+
+  const onChange = e => {
+    const reader = new FileReader(),
+      files = e.target.files
+    reader.onload = function () {
+      setAvatar(reader.result)
+    }
+    reader.readAsDataURL(files[0])
   }
 
   // ** Adds New Event
@@ -122,6 +161,7 @@ const AddEventSidebar = props => {
         calendar: value[0].label,
         url: url.length ? url : undefined,
         guests: guests.length ? guests : undefined,
+        lessonOption: lessonOption.length ? lessonOption : undefined,
         location: location.length ? location : undefined,
         desc: desc.length ? desc : undefined
       }
@@ -144,8 +184,9 @@ const AddEventSidebar = props => {
     setUrl('')
     setLocation('')
     setDesc('')
+    setLessons({})
     setGuests({})
-    setValue([{ value: 'Business', label: 'Business', color: 'primary' }])
+    setValue([{ value: '10', label: '10', color: 'primary' }])
     setStartPicker(new Date())
     setEndPicker(new Date())
   }
@@ -159,7 +200,7 @@ const AddEventSidebar = props => {
         if (calendar.length) {
           return { label: calendar, value: calendar, color: calendarsColor[calendar] }
         } else {
-          return { value: 'Business', label: 'Business', color: 'primary' }
+          return { value: '10', label: '10', color: 'primary' }
         }
       }
       setTitle(selectedEvent.title || title)
@@ -249,7 +290,7 @@ const AddEventSidebar = props => {
   const EventActions = () => {
     if (isObjEmpty(selectedEvent) || (!isObjEmpty(selectedEvent) && !selectedEvent.title.length)) {
       return (
-        <Fragment>
+        <Fragment style={{marginTop: 10}}>
           <Button.Ripple className='mr-1' type='submit' color='primary'>
             Add
           </Button.Ripple>
@@ -260,7 +301,7 @@ const AddEventSidebar = props => {
       )
     } else {
       return (
-        <Fragment>
+        <Fragment  style={{marginTop: 10}}>
           <Button.Ripple
             className='mr-1'
             color='primary'
@@ -307,7 +348,8 @@ const AddEventSidebar = props => {
             }
           })}
         >
-          <FormGroup>
+         
+          <FormGroup style={{marginTop: 10}}>
             <Label for='title'>
               Title <span className='text-danger'>*</span>
             </Label>
@@ -325,7 +367,7 @@ const AddEventSidebar = props => {
           </FormGroup>
 
           <FormGroup>
-            <Label for='label'>Label</Label>
+            <Label for='label'>Class</Label>
             <Select
               id='label'
               value={value}
@@ -342,7 +384,7 @@ const AddEventSidebar = props => {
           </FormGroup>
 
           <FormGroup>
-            <Label for='startDate'>Start Date</Label>
+            <Label for='startDate'>Start Date & Time</Label>
             <Flatpickr
               required
               id='startDate'
@@ -359,7 +401,7 @@ const AddEventSidebar = props => {
           </FormGroup>
 
           <FormGroup>
-            <Label for='endDate'>End Date</Label>
+            <Label for='endDate'>End Date & Time</Label>
             <Flatpickr
               required
               id='endDate'
@@ -388,25 +430,34 @@ const AddEventSidebar = props => {
           </FormGroup>
 
           <FormGroup>
-            <Label for='eventURL'>Event URL</Label>
-            <Input
-              type='url'
-              id='eventURL'
-              value={url}
-              onChange={e => setUrl(e.target.value)}
-              placeholder='https://www.google.com'
+            <Label for='eventURL'>Lesson</Label>
+            <Select
+              // type='url'
+            isMulti
+              id='guests'
+              className='react-select'
+              classNamePrefix='select'
+              // value={url}
+              isClearable={false}
+              theme={selectThemeColors}
+              value={lessonOption.length ? [...lessonOption] : null}
+              options={lessons}
+              onChange={data => setLessons([...data])}
+              components={{
+                Option: LessonComponent
+              }}
             />
           </FormGroup>
 
           <FormGroup>
-            <Label for='guests'>Guests</Label>
+            <Label for='guests'>Content</Label>
             <Select
               isMulti
               id='guests'
               className='react-select'
               classNamePrefix='select'
               isClearable={false}
-              options={guestsOptions}
+              options={content}
               theme={selectThemeColors}
               value={guests.length ? [...guests] : null}
               onChange={data => setGuests([...data])}
@@ -415,8 +466,23 @@ const AddEventSidebar = props => {
               }}
             />
           </FormGroup>
+      <Media style={{marginBottom: 10}}>
+        <Media className='mr-25' left>
+          <Media object className='rounded mr-50' src={avatar} alt='Generic placeholder image' height='80' width='80' />
+        </Media>
+        <Media className='mt-75 ml-1' body>
+          <Button.Ripple tag={Label} className='mr-75' size='sm' color='primary'>
+            Upload
+            <Input type='file' onChange={onChange} hidden accept='image/*' />
+          </Button.Ripple>
+          <Button.Ripple color='secondary' size='sm' outline>
+            Reset
+          </Button.Ripple>
+          <p>Upload documents !</p>
+        </Media>
+      </Media>
 
-          <FormGroup>
+          {/* <FormGroup>
             <Label for='location'>Location</Label>
             <Input id='location' value={location} onChange={e => setLocation(e.target.value)} placeholder='Office' />
           </FormGroup>
@@ -432,7 +498,7 @@ const AddEventSidebar = props => {
               onChange={e => setDesc(e.target.value)}
               placeholder='Description'
             />
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup className='d-flex'>
             <EventActions />
           </FormGroup>

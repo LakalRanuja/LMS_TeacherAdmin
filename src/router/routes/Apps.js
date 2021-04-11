@@ -49,6 +49,13 @@ const AppRoutes = [
     className: 'todo-application',
     component: lazy(() => import('../../views/apps/todo'))
   },
+  // {
+  //   path: '/apps/todo/data',
+  //   exact: true,
+  //   appLayout: true,
+  //   className: 'todo-application',
+  //   component: lazy(() => import('../../views/apps/todo/component/index'))
+  // },
   {
     path: '/apps/todo/:filter',
     appLayout: true,

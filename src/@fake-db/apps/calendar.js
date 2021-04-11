@@ -19,7 +19,7 @@ const data = {
       end: nextDay,
       allDay: false,
       extendedProps: {
-        calendar: 'Business'
+        calendar: '10'
       }
     },
     {
@@ -30,7 +30,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
+        calendar: '10'
       }
     },
     {
@@ -41,7 +41,7 @@ const data = {
       start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
       extendedProps: {
-        calendar: 'Holiday'
+        calendar: '8'
       }
     },
     {
@@ -52,7 +52,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
+        calendar: '11'
       }
     },
     {
@@ -63,7 +63,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'ETC'
+        calendar: '7'
       }
     },
     {
@@ -74,7 +74,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
+        calendar: 'MyClass'
       }
     },
     {
@@ -85,7 +85,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Family'
+        calendar: '4'
       }
     },
     {
@@ -96,7 +96,7 @@ const data = {
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
+        calendar: '10'
       }
     },
     {
@@ -107,7 +107,7 @@ const data = {
       end: nextMonth,
       allDay: true,
       extendedProps: {
-        calendar: 'Business'
+        calendar: '10'
       }
     },
     {
@@ -118,7 +118,7 @@ const data = {
       end: prevMonth,
       allDay: true,
       extendedProps: {
-        calendar: 'Personal'
+        calendar: 'MyClass'
       }
     }
   ]

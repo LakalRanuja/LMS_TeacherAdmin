@@ -12,6 +12,7 @@ import { Modal, ModalBody, Button, Form, FormGroup, Input, Label, Media } from '
 
 // ES2015 module syntax
 // import { Upload } from '@progress/kendo-react-upload';
+import avatar from '../../../assets/images/icons/pdf.png'
 
 // ** Utils
 import { isObjEmpty, selectThemeColors } from '@utils'
@@ -96,6 +97,7 @@ const TaskSidebar = props => {
   // ** Users
   const [title, setTitle] = useState(''),
     [assignee, setAssignee] = useState({ value: 'grade', label: 'Grade'}),
+    [content, setContent] = useState([]),
     [tags, setTags] = useState([]),
     [desc, setDesc] = useState(EditorState.createEmpty()),
     [completed, setCompleted] = useState(false),
@@ -115,13 +117,22 @@ const TaskSidebar = props => {
 
   // ** Tag Select Options
   const tagOptions = [
-    { value: 'maths', label: 'Maths' },
-    { value: 'science', label: 'Science' },
-    { value: 'sinhala', label: 'Sinhala' },
-    { value: 'english', label: 'English' },
-    { value: 'music', label: 'Music' },
-    { value: 'dancing', label: 'Dancing' },
-    { value: 'drama', label: 'Drama' }
+    { value: 'Real Numbers ', label: 'Real Numbers '},
+    { value: 'Indices and Logarithms -I', label: 'Indices and Logarithms -I'},
+    { value: 'Binomial Expressions', label: 'Binomial Expressions'},
+    { value: 'Volume of Solids', label: 'Volume of Solids'},
+    { value: 'Algebraic Fractions', label: 'Algebraic Fractions'},
+    { value: 'Surface Area of Solids', label: 'Surface Area of Solids'}
+  ]
+
+
+  const contents = [
+    { value: 'Rational Numbers ', label: 'Rational Numbers '},
+    { value: 'Real Numbers', label: 'Real Numbers'},
+    { value: 'Fractional Indices of a Power', label: 'Fractional Indices of a Power'},
+    { value: 'Laws of logarithms', label: 'Laws of logarithms'},
+    { value: 'Logarithms', label: 'Logarithms'},
+    { value: 'Applications of logarithms', label: 'Applications of logarithms'}
   ]
 
   // ** Custom Assignee Component
@@ -190,6 +201,15 @@ const TaskSidebar = props => {
     }
   }
 
+  const onChange = e => {
+    const reader = new FileReader(),
+      files = e.target.files
+    reader.onload = function () {
+      setAvatar(reader.result)
+    }
+    reader.readAsDataURL(files[0])
+  }
+
   // ** Function to run when sidebar closes
   const handleSidebarClosed = () => {
     setTags([])
@@ -213,8 +233,8 @@ const TaskSidebar = props => {
     if (store.selectedTask.assignee.fullName !== assignee.label) {
       setAssignee({
         // value: store.selectedTask.assignee.fullName,
-        label: store.selectedTask.assignee.fullName,
-        img: store.selectedTask.assignee.avatar
+        label: store.selectedTask.assignee.fullName 
+        // img: store.selectedTask.assignee.avatar
       })
     }
     if (store.selectedTask.tags.length) {
@@ -346,7 +366,20 @@ const TaskSidebar = props => {
           </FormGroup>
           <FormGroup>
             <Label className='form-label' for='due-date'>
-              Due Date
+              Start Date
+            </Label>
+            <Flatpickr
+              id='due-date'
+              name='due-date'
+              className='form-control'
+              onChange={date => setDueDate(date[0])}
+              value={dueDate}
+              options={{ dateFormat: 'Y-m-d' }}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label className='form-label' for='due-date'>
+              End Date
             </Label>
             <Flatpickr
               id='due-date'
@@ -359,7 +392,7 @@ const TaskSidebar = props => {
           </FormGroup>
           <FormGroup>
             <Label className='form-label' for='task-tags'>
-              Subject
+              Lessons
             </Label>
             <Select
             style={{pointer: 'curser'}}
@@ -377,6 +410,40 @@ const TaskSidebar = props => {
             />
           </FormGroup>
           <FormGroup>
+            <Label className='form-label' for='task-tagss'>
+              Content
+            </Label>
+            <Select
+            style={{pointer: 'curser'}}
+              isMulti
+              id='task-tagss'
+              className='react-select'
+              classNamePrefix='select'
+              isClearable={false}
+              options={contents}
+              theme={selectThemeColors}
+              value={content}
+              onChange={data => {
+                setContent(data !== null ? [...data] : [])
+              }}
+            />
+          </FormGroup>
+          <Media style={{marginBottom: 10}}>
+        <Media className='mr-25' left>
+          <Media object className='rounded mr-50' src={avatar} alt='Generic placeholder image' height='80' width='80' />
+        </Media>
+        <Media className='mt-75 ml-1' body>
+          <Button.Ripple tag={Label} className='mr-75' size='sm' color='primary'>
+            Upload
+            <Input type='file' onChange={onChange} hidden accept='image/*' />
+          </Button.Ripple>
+          <Button.Ripple color='secondary' size='sm' outline>
+            Reset
+          </Button.Ripple>
+          <p>Upload documents !</p>
+        </Media>
+      </Media>
+          {/* <FormGroup>
             <Label for='task-desc' className='form-label'>
               Description
             </Label>
@@ -394,7 +461,7 @@ const TaskSidebar = props => {
               }}
               onEditorStateChange={data => setDesc(data)}
             />
-          </FormGroup>
+          </FormGroup> */}
           {/* <Upload
                 batch={false}
                 multiple={true}

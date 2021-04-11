@@ -5,17 +5,18 @@ export default [
     header: 'Apps & Pages'
   },
   {
-    id: 'todo',
-    title: 'Class Works ',
-    icon: <Clock size={20} />,
-    navLink: '/apps/todo'
-  },
-  {
     id: 'calendar',
     title: 'Calendar',
     icon: <Calendar size={20} />,
     navLink: '/apps/calendar'
   },
+  {
+    id: 'todo',
+    title: 'Manage Schedular ',
+    icon: <Clock size={20} />,
+    navLink: '/apps/todo'
+  },
+  
   {
     id: 'users',
     title: 'Student',
@@ -55,13 +56,13 @@ export default [
             title: 'Detail',
             icon: <Circle />,
             navLink: '/pages/blog/detail'
-          },
-          {
-            id: 'blogEdit',
-            title: 'Add',
-            icon: <Circle />,
-            navLink: '/pages/blog/edit'
           }
+          // {
+          //   id: 'blogEdit',
+          //   title: 'Add',
+          //   icon: <Circle />,
+          //   navLink: '/pages/blog/edit'
+          // }
         ]
       }
     ]

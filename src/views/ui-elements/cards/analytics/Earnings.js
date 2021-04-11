@@ -90,7 +90,7 @@ const Earnings = ({ success }) => {
     <Card className='earnings-card'>
       <CardBody>
         <Row>
-          <Col xs='6'>
+          <Col xs='3'>
             <CardTitle className='mb-1'>Reminder</CardTitle>
             <div className='font-small-2'>Tomorrow</div>
             <h5 className='mb-1'>Maths class 11 E</h5>
@@ -99,6 +99,33 @@ const Earnings = ({ success }) => {
               <span> Johndoe</span>
             </CardText>
           </Col>
+          <Col xs='3'>
+          <CardTitle className='mb-1'>----------</CardTitle>
+            <div className='font-small-2'>Monday</div>
+            <h5 className='mb-1'>English class 9 C</h5>
+            <CardText className='text-muted font-small-2'>
+              {/* <span className='font-weight-bolder'>Mr. </span> */}
+              {/* <span> Johndoe</span> */}
+            </CardText>
+            </Col>
+            <Col xs='3'>
+          <CardTitle className='mb-1'>----------</CardTitle>
+            <div className='font-small-2'>Tuesday</div>
+            <h5 className='mb-1'>Literature class 8 B</h5>
+            <CardText className='text-muted font-small-2'>
+              {/* <span className='font-weight-bolder'>Mr. </span> */}
+              {/* <span> Johndoe</span> */}
+            </CardText>
+            </Col>
+            <Col xs='3'>
+          <CardTitle className='mb-1'>----------</CardTitle>
+            <div className='font-small-2'>Wednesday</div>
+            <h5 className='mb-1'>Maths class 10 A</h5>
+            <CardText className='text-muted font-small-2'>
+              {/* <span className='font-weight-bolder'>Mr. </span> */}
+              {/* <span> Johndoe</span> */}
+            </CardText>
+            </Col>
           {/* <Col xs='6'>
             <Chart options={options} series={[53, 16, 31]} type='donut' height={120} />
           </Col> */}

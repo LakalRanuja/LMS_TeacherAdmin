@@ -4,7 +4,7 @@
 const themeConfig = {
   app: {
     appName: 'Johndoe',
-    appLogoImage: require('@src/assets/images/avatars/avatar-blank.png').default
+    appLogoImage: require('@src/assets/images/portrait/small/avatar-s-5.jpg').default
   },
   layout: {
     isRTL: false,

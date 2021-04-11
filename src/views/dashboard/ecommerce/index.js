@@ -31,30 +31,30 @@ const EcommerceDashboard = () => {
         </Col>
       </Row>
       <Row className='match-height'>
-        <Col lg='4' md='12'>
+        <Col lg='12' md='12'>
           <Row className='match-height'>
-            <Col lg='6' md='3' xs='6'>
+            {/* <Col lg='6' md='3' xs='6'>
               <OrdersBarChart warning={colors.warning.main} />
             </Col>
             <Col lg='6' md='3' xs='6'>
               <ProfitLineChart info={colors.info.main} />
-            </Col>
-            <Col lg='12' md='6' xs='12'>
+            </Col> */}
+            <Col lg='12' md='12' xs='12'>
               <Earnings success={colors.success.main} />
             </Col>
           </Row>
         </Col>
-        <Col lg='8' md='12'>
+        {/* <Col lg='8' md='12'>
           <RevenueReport primary={colors.primary.main} warning={colors.warning.main} />
-        </Col>
+        </Col> */}
       </Row>
       <Row className='match-height'>
-        <Col lg='8' xs='12'>
+        <Col lg='12' xs='12'>
           <CompanyTable />
         </Col>
-        <Col lg='4' md='6' xs='12'>
+        {/* <Col lg='4' md='6' xs='12'>
           <CardMeetup />
-        </Col>
+        </Col> */}
         <Col lg='4' md='6' xs='12'>
           <CardBrowserStates colors={colors} trackBgColor={trackBgColor} />
         </Col>
