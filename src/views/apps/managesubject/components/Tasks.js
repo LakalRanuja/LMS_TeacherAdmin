@@ -35,7 +35,8 @@ const Tasks = props => {
    // ** States
    const [img, setImg] = useState(null)
    const rowDatatState = useSelector(state => state.manageSubjectContent.rowDataObject)
- 
+   const [guests, setGuests] = useState({})
+
    // ** Function to change user image
    const onChange = e => {
      const reader = new FileReader(),
@@ -52,6 +53,30 @@ const Tasks = props => {
     {title : "The Yandex", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
     {title : "Microsoft", description : "Online free AI English to Sinhala translator powered by Google", file : null}
   ]
+  const dataObjArray2 = [
+    {title : "An Red Apple", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Small Google", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Large Yandex", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "My Self", description : "Online free AI English to Sinhala translator powered by Google", file : null}
+  ]
+
+  const guestsOptions = [
+    { value: 'An Apple', label: 'An Apple' },
+    { value: 'The Google', label: 'The Google' },
+    { value: 'The Yandex', label: 'The Yandex' },
+    { value: 'Microsoft', label: 'Microsoft' }
+  ]
+
+  const GuestsComponent = ({ data, ...props }) => {
+    return (
+      <components.Option {...props}>
+        <div className='d-flex flex-wrap align-items-center'>
+          {/* <Avatar className='my-0 mr-1' size='sm'  /> */}
+          <div>{data.label}</div>
+        </div>
+      </components.Option>
+    )
+  }
 
   return (
     <div className='todo-app-list overflow-auto'>
@@ -110,18 +135,17 @@ const Tasks = props => {
                           <FormGroup className="col-12 ">
                             <Label for='guests'>All Lessons</Label>
                             <Select 
-                              isMulti
                               id='guests'
                               className='react-select'
                               classNamePrefix='select'
                               isClearable={false}
-                              // options={guestsOptions}
+                              options={guestsOptions}
                               theme={selectThemeColors}
-                              // value={guests.length ? [...guests] : null}
-                              // onChange={data => setGuests([...data])}
-                              // components={{
-                              //   Option: GuestsComponent
-                              // }}
+                              value={guests.length ? [...guests] : null}
+                              onChange={data => setGuests([...data])}
+                              components={{
+                                Option: GuestsComponent
+                              }}
                             />
                           </FormGroup>
 
@@ -174,7 +198,7 @@ const Tasks = props => {
                         </thead>
                         <tbody >
                         {/* here */}
-                         { dataObjArray.map((item) => <RowData title= {item.title} description= {item.description}  />)}
+                         { dataObjArray2.map((item) => <RowData title= {item.title} description= {item.description}  />)}
                         
                         </tbody>
                       </Table>

@@ -8,9 +8,9 @@ const RowData = ({title = "", description = "", file = null}) => {
       const obj = { title,  description, file}
      return (
           <tr >
-               <th  style = {{fontSize : '11px'}} scope="row">{title}</th>
-               <td style = {{fontSize : '11px'}}>{description}</td>
-               <td  style = {{fontSize : '11px'}} ><Button 
+               <td  style = {{fontSize : '12px'}} scope="row">{title}</td>
+               <td style = {{fontSize : '12px'}}>{description}</td>
+               <td  style = {{fontSize : '12px'}} ><Button 
                          onClick= {() => dispatch(setTableRowDetails(obj)) } 
                          size="sm" 
                          outline 
