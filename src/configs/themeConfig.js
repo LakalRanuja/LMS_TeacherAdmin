@@ -3,7 +3,7 @@
 //Template config options
 const themeConfig = {
   app: {
-    appName: 'Johndoe',
+    appName: 'Supun',
     appLogoImage: require('@src/assets/images/portrait/small/avatar-s-5.jpg').default
   },
   layout: {

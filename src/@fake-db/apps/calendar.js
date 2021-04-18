@@ -14,7 +14,7 @@ const data = {
     {
       id: 1,
       url: '',
-      title: 'Design Review',
+      title: '11-E class',
       start: date,
       end: nextDay,
       allDay: false,
@@ -25,7 +25,7 @@ const data = {
     {
       id: 2,
       url: '',
-      title: 'Meeting With Client',
+      title: '9-A class',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
@@ -36,7 +36,7 @@ const data = {
     {
       id: 3,
       url: '',
-      title: 'Family Trip',
+      title: '7-C class',
       allDay: true,
       start: new Date(date.getFullYear(), date.getMonth() + 1, -9),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -7),
@@ -47,7 +47,7 @@ const data = {
     {
       id: 4,
       url: '',
-      title: "Doctor's Appointment",
+      title: "5-D class",
       start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
       allDay: true,
@@ -58,7 +58,7 @@ const data = {
     {
       id: 5,
       url: '',
-      title: 'Dart Game?',
+      title: '10-E class',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
@@ -69,7 +69,7 @@ const data = {
     {
       id: 6,
       url: '',
-      title: 'Meditation',
+      title: '6-C class',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
@@ -80,7 +80,7 @@ const data = {
     {
       id: 7,
       url: '',
-      title: 'Dinner',
+      title: '4-D class',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
@@ -91,7 +91,7 @@ const data = {
     {
       id: 8,
       url: '',
-      title: 'Product Review',
+      title: '2-B class',
       start: new Date(date.getFullYear(), date.getMonth() + 1, -13),
       end: new Date(date.getFullYear(), date.getMonth() + 1, -12),
       allDay: true,
@@ -102,7 +102,7 @@ const data = {
     {
       id: 9,
       url: '',
-      title: 'Monthly Meeting',
+      title: '9-E class',
       start: nextMonth,
       end: nextMonth,
       allDay: true,
@@ -113,7 +113,7 @@ const data = {
     {
       id: 10,
       url: '',
-      title: 'Monthly Checkup',
+      title: '10-A class',
       start: prevMonth,
       end: prevMonth,
       allDay: true,

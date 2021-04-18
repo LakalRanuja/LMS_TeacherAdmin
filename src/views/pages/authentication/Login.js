@@ -28,6 +28,7 @@ import {
 } from 'reactstrap'
 
 import '@styles/base/pages/page-auth.scss'
+import avatar from '../../../assets/images/logo/logoNew.png'
 
 const ToastContent = ({ name, role }) => (
   <Fragment>
@@ -77,7 +78,8 @@ const Login = props => {
     <div className='auth-wrapper auth-v2'>
       <Row className='auth-inner m-0'>
         <Link className='brand-logo' to='/' onClick={e => e.preventDefault()}>
-          <svg viewBox='0 0 139 95' version='1.1' height='28'>
+        <img src={avatar} style={{width : '70px', height : "70px", borderRadius : '10px'}} className= "shadow" />
+          {/* <svg viewBox='0 0 139 95' version='1.1' height='28'>
             <defs>
               <linearGradient x1='100%' y1='10.5120544%' x2='50%' y2='89.4879456%' id='linearGradient-1'>
                 <stop stopColor='#000000' offset='0%'></stop>
@@ -124,8 +126,8 @@ const Login = props => {
                 </g>
               </g>
             </g>
-          </svg>
-          <h2 className='brand-text text-primary ml-1'>Vuexy</h2>
+          </svg> */}
+          {/* <h2 className='brand-text text-primary ml-1'>Vuexy</h2> */}
         </Link>
         <Col className='d-none d-lg-flex align-items-center p-5' lg='8' sm='12'>
           <div className='w-100 d-lg-flex align-items-center justify-content-center px-5'>
@@ -135,10 +137,10 @@ const Login = props => {
         <Col className='d-flex align-items-center auth-bg px-2 p-lg-5' lg='4' sm='12'>
           <Col className='px-xl-2 mx-auto' sm='8' md='6' lg='12'>
             <CardTitle tag='h2' className='font-weight-bold mb-1'>
-              Welcome to Vuexy! 👋
+              Welcome to Test-Book
             </CardTitle>
-            <CardText className='mb-2'>Please sign-in to your account and start the adventure</CardText>
-            <Alert color='primary'>
+            {/* <CardText className='mb-2'>Please sign-in to your account and start the adventure</CardText> */}
+            {/* <Alert color='primary'>
               <div className='alert-body font-small-2'>
                 <p>
                   <small className='mr-50'>
@@ -160,7 +162,7 @@ const Login = props => {
               <UncontrolledTooltip target='login-tip' placement='left'>
                 This is just for ACL demo purpose.
               </UncontrolledTooltip>
-            </Alert>
+            </Alert> */}
             <Form className='auth-login-form mt-2' onSubmit={handleSubmit(onSubmit)}>
               <FormGroup>
                 <Label className='form-label' for='login-email'>
@@ -204,7 +206,7 @@ const Login = props => {
                 Sign in
               </Button.Ripple>
             </Form>
-            <p className='text-center mt-2'>
+            {/* <p className='text-center mt-2'>
               <span className='mr-25'>New on our platform?</span>
               <Link to='/register'>
                 <span>Create an account</span>
@@ -226,7 +228,7 @@ const Login = props => {
               <Button.Ripple className='mr-0' color='github'>
                 <GitHub size={14} />
               </Button.Ripple>
-            </div>
+            </div> */}
           </Col>
         </Col>
       </Row>

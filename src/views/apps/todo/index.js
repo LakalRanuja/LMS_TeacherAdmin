@@ -29,7 +29,8 @@ const TODO = () => {
 
   // ** Store Vars
   const dispatch = useDispatch()
-  const store = useSelector(state => state.calendar)
+  const newStore = useSelector(state => state.calendar)
+  const store = useSelector(state => state.todo)
 
   // ** URL Params
   const paramsURL = useParams()
@@ -61,7 +62,8 @@ const TODO = () => {
     //   {/* <Card/> */}
     <Fragment>
       <Sidebar
-        store={store}
+        store={newStore}
+        // store={store}
         params={params}
         getTasks={getTasks}
         dispatch={dispatch}
@@ -72,6 +74,18 @@ const TODO = () => {
         setMainSidebar={setMainSidebar}
         handleTaskSidebar={handleTaskSidebar}
       />
+
+            <TaskSidebar
+              store={store}
+              params={params}
+              addTask={addTask}
+              dispatch={dispatch}
+              open={openTaskSidebar}
+              updateTask={updateTask}
+              selectTask={selectTask}
+              deleteTask={deleteTask}
+              handleTaskSidebar={handleTaskSidebar}
+            />
       
       {/* <!-- Editable table --> */}
 <div class="card">

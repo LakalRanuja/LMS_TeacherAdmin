@@ -111,7 +111,7 @@ const GeneralTabs = ({ data }) => {
               />
             </FormGroup>
           </Col>
-          <Col className='mt-75' sm='12'>
+          {/* <Col className='mt-75' sm='12'>
             <Alert className='mb-50' color='warning'>
               <h4 className='alert-heading'>Your email is not confirmed. Please check your inbox.</h4>
               <div className='alert-body'>
@@ -120,7 +120,7 @@ const GeneralTabs = ({ data }) => {
                 </a>
               </div>
             </Alert>
-          </Col>
+          </Col> */}
           <Col className='mt-2' sm='12'>
             <Button.Ripple type='submit' className='mr-1' color='primary'>
               Save changes

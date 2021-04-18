@@ -8,6 +8,7 @@ import { Button, ListGroup, ListGroupItem, CardBody, CustomInput  } from 'reacts
 import { Mail, Star, Check, Trash, Plus, Archive } from 'react-feather'
 
 import { updateAllFilters } from '../calendar/store/actions'
+import store from './store/actions'
 
 const TodoSidebar = props => {
   // ** Props
