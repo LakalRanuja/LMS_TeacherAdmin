@@ -113,14 +113,14 @@ export const columns = [
     minWidth: '280px',
     selector: 'email',
     sortable: true,
-    cell: row => "anandacollege45@gmail.com"
+    cell: row => "sachintha@gmail.com"
   },
   {
     name: 'Parent Full Name',
     minWidth: '200px',
     selector: 'parentName',
     sortable: true,
-    cell: row => { return row.client ? row.client.name : 'John wick' }
+    cell: row => { return row.client ? row.client.name : 'Namal' }
   },
   {
     name: 'Parent Contact Number',

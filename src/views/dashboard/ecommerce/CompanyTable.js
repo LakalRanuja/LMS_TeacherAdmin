@@ -6,7 +6,7 @@ const CompanyTable = () => {
   const data = [
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'John',
+        name: 'Sulocha',
         
         category: '2001-03-10',
         views: 'Mr.Kamal',
@@ -15,7 +15,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Motels',
+        name: 'Sachintha',
         
         category: '1999-08-20',
         views: 'Mr.Nimal',
@@ -24,7 +24,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Sunny',
+        name: 'Ayesh',
         
         category: '2005-03-22',
         views: 'Mr.Dilani',
@@ -34,7 +34,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Wicky',
+        name: 'Kelum',
         
         category: '2006-10-01',
         views: 'Mr.Sampath',
@@ -44,7 +44,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Sharuk',
+        name: 'Ishan',
         
         category: '2007-05-15',
         views: 'Mr.Somasiri',
@@ -54,7 +54,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Alise',
+        name: 'Kasun',
         email: 'Alise@hodzi.co.uk',
         category: '2001-03-10',
         views: 'Mr.Vajira',
@@ -64,7 +64,7 @@ const CompanyTable = () => {
       },
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
-        name: 'Dom',
+        name: 'Lamal',
         email: 'Dom@hodzi.co.uk',
         category: '2001-03-10',
         views: 'Mr.Damith',
