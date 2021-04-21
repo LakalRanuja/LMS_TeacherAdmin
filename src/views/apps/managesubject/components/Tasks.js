@@ -55,6 +55,8 @@ const Tasks = props => {
    const [img, setImg] = useState(null)
    const rowDatatState = useSelector(state => state.manageSubjectContent.rowDataObject)
    const [guests, setGuests] = useState({})
+   const [grade, setGrade] = useState({})
+   const [gradeLetter, setGradeLetter] = useState({})
    
    // ** Function to change user image
    const onChange = e => {
@@ -97,6 +99,53 @@ const Tasks = props => {
     )
   }
 
+  const gradeOptions = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' },
+    { value: '4', label: '4' },
+    { value: '5', label: '5' },
+    { value: '6', label: '6' },
+    { value: '7', label: '7' },
+    { value: '8', label: '8' },
+    { value: '9', label: '9' },
+    { value: '10', label: '10' },
+    { value: '11', label: '11' },
+    { value: '12', label: '12' },
+    { value: '13', label: '13' }
+  ]
+
+  const GradeComponent = ({ data, ...props }) => {
+    return (
+      <components.Option {...props}>
+        <div className='d-flex flex-wrap align-items-center'>
+          {/* <Avatar className='my-0 mr-1' size='sm'  /> */}
+          <div>{data.label}</div>
+        </div>
+      </components.Option>
+    )
+  }
+
+  const gradeLetterOptions = [
+    { value: 'A', label: 'A' },
+    { value: 'B', label: 'B' },
+    { value: 'C', label: 'C' },
+    { value: 'D', label: 'D' },
+    { value: 'E', label: 'E' },
+    { value: 'F', label: 'F' }
+  ]
+
+  const GradeLetterComponent = ({ data, ...props }) => {
+    return (
+      <components.Option {...props}>
+        <div className='d-flex flex-wrap align-items-center'>
+          {/* <Avatar className='my-0 mr-1' size='sm'  /> */}
+          <div>{data.label}</div>
+        </div>
+      </components.Option>
+    )
+  }
+
   return (
     <div className='todo-app-list overflow-auto'>
       <div className='app-fixed-search d-flex align-items-center'>
@@ -109,6 +158,44 @@ const Tasks = props => {
                     {/* input Container */}
                     <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
                          <div className="col-8 px-2">
+                         {/* grade */}
+                         <FormGroup className="col-12 ">
+                            <Label for='gradeManageLesson'>Grade</Label>
+                          <div className="row">
+                          <div className="col-7">
+                              <Select 
+                                  id='gradeManageLesson'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeOptions}
+                                  theme={selectThemeColors}
+                                  value={grade.length ? [...grade] : null}
+                                  onChange={data => setGrade([...data])}
+                                  components={{
+                                    Option: GradeComponent
+                                  }}
+                                />
+                              </div>
+                              
+                              <div className="col-5">
+                              <Select 
+                                  id='gradeLetterManageLesson'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeLetterOptions}
+                                  theme={selectThemeColors}
+                                  value={gradeLetter.length ? [...gradeLetter] : null}
+                                  onChange={data => setGradeLetter([...data])}
+                                  components={{
+                                    Option: GradeLetterComponent
+                                  }}
+                                />
+                           </div>
+                          </div>
+                          </FormGroup>
+
                           <FormGroup className="col-12">
                               <Label for="exampleEmail">Title</Label>
                               <Input type="text" name="email" id="exampleEmail" size = "sm" value = {rowDatatState ? rowDatatState.title : ""} placeholder="" className= " border border-primary bg-white" />
@@ -150,6 +237,44 @@ const Tasks = props => {
                     {/* input Container */}
                     <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
                          <div className="col-8 px-2">
+                        {/* grade */}
+                        <FormGroup className="col-12 ">
+                            <Label for='gradeManageContent'>Grade</Label>
+                          <div className="row">
+                          <div className="col-7">
+                              <Select 
+                                  id='gradeManageContent'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeOptions}
+                                  theme={selectThemeColors}
+                                  value={grade.length ? [...grade] : null}
+                                  onChange={data => setGrade([...data])}
+                                  components={{
+                                    Option: GradeComponent
+                                  }}
+                                />
+                              </div>
+                              
+                              <div className="col-5">
+                              <Select 
+                                  id='gradeLetterManageContent'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeLetterOptions}
+                                  theme={selectThemeColors}
+                                  value={gradeLetter.length ? [...gradeLetter] : null}
+                                  onChange={data => setGradeLetter([...data])}
+                                  components={{
+                                    Option: GradeLetterComponent
+                                  }}
+                                />
+                           </div>
+                          </div>
+                          </FormGroup>
+
                           {/* dropdown  */}
                           <FormGroup className="col-12 ">
                             <Label for='guests'>All Lessons</Label>
@@ -201,7 +326,7 @@ const Tasks = props => {
                                       <span className='d-block d-sm-none'>
                                         <Edit size={14} />
                                       </span>
-                                      <input type='file' hidden id='change-img' onChange={onChange} accept='image/*' />
+                                      <input type='file' hidden id='change-img' onChange={onChange}  />
                                     </Button.Ripple>
                                     
                                   </div>
