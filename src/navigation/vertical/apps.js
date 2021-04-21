@@ -33,5 +33,11 @@ export default [
     title: 'Manage Subject',
     icon: <Book size={20} />,
     navLink: '/apps/managesubject/view'
+  },
+  {
+    id: 'assignent',
+    title: 'Manage Assignments',
+    icon: <FileText size={20} />,
+    navLink: '/apps/manage-assignments/view'
   }
 ]
