@@ -52,16 +52,16 @@ const Tasks = props => {
   // [UPDATE]
   let header = ''
   const teachingClassArray = [
-      {grade : "12", gradeLetter : "A", subject : "Mathematics", to : "/apps/user/view/1" },
-      {grade : "13", gradeLetter : "C", subject : "Sinhala", to :  "/apps/user/view/1" },
-      {grade : "13", gradeLetter : "D", subject : "Mathematics", to :  "/apps/user/view/1" },
-      {grade : "12", gradeLetter : "E", subject : "Science", to :  "/apps/user/view/1" },
-      {grade : "13", gradeLetter : "B", subject : "Mathematics", to :  "/apps/user/view/1" }
+      {grade : "12", gradeLetter : "A", subject : "Mathematics", to : "/apps/classes/view/1" },
+      {grade : "13", gradeLetter : "C", subject : "Sinhala", to :  "/apps/classes/view/1" },
+      {grade : "13", gradeLetter : "D", subject : "Mathematics", to :  "/apps/classes/view/1" },
+      {grade : "12", gradeLetter : "E", subject : "Science", to :  "/apps/classes/view/1" },
+      {grade : "13", gradeLetter : "B", subject : "Mathematics", to :  "/apps/classes/view/1" }
     ]
 
   const myClassArray = [
-      {grade : "12", gradeLetter : "A", subject : null, to : "/apps/user/list" },
-      {grade : "13", gradeLetter : "C", subject : null, to : "/apps/user/list" }
+      {grade : "12", gradeLetter : "A", subject : null, to : "/apps/classes/list" },
+      {grade : "13", gradeLetter : "C", subject : null, to : "/apps/classes/list" }
     ]
  
   if (state.toggleNavClasses) {

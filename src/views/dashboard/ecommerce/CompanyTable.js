@@ -55,7 +55,7 @@ const CompanyTable = () => {
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
         name: 'Kasun',
-        email: 'Alise@hodzi.co.uk',
+        email: '',
         category: '2001-03-10',
         views: 'Mr.Vajira',
         revenue: '0771234560'
@@ -65,7 +65,7 @@ const CompanyTable = () => {
       {
         img: require('@src/assets/images/icons/parachute.svg').default,
         name: 'Lamal',
-        email: 'Dom@hodzi.co.uk',
+        email: '',
         category: '2001-03-10',
         views: 'Mr.Damith',
         revenue: '07712341560'

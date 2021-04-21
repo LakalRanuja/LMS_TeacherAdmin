@@ -43,7 +43,7 @@ const AppRoutes = [
     component: lazy(() => import('../../views/apps/chat'))
   },
   {
-    path: '/apps/todo',
+    path: '/apps/manage schedular',
     exact: true,
     appLayout: true,
     className: 'todo-application',
@@ -147,31 +147,31 @@ const AppRoutes = [
     component: lazy(() => import('../../views/apps/ecommerce/checkout'))
   },
   {
-    path: '/apps/user/list',
+    path: '/apps/classes/list',
     component: lazy(() => import('../../views/apps/user/list'))
   },
   {
-    path: '/apps/user/edit',
+    path: '/apps/classes/edit',
     exact: true,
-    component: () => <Redirect to='/apps/user/edit/1' />
+    component: () => <Redirect to='/apps/classes/edit/1' />
   },
   {
-    path: '/apps/user/edit/:id',
+    path: '/apps/classes/edit/:id',
     component: lazy(() => import('../../views/apps/user/edit')),
     meta: {
-      navLink: '/apps/user/edit'
+      navLink: '/apps/classes/edit'
     }
   },
   {
-    path: '/apps/user/view',
+    path: '/apps/classes/view',
     exact: true,
-    component: () => <Redirect to='/apps/user/view/1' />
+    component: () => <Redirect to='/apps/classes/view/1' />
   },
   {
-    path: '/apps/user/view/:id',
+    path: '/apps/classes/view/:id',
     component: lazy(() => import('../../views/apps/user/view')),
     meta: {
-      navLink: '/apps/user/view'
+      navLink: '/apps/classes/view'
     }
   },
   {

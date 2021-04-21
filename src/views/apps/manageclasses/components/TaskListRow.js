@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/taskListRow.css'
 import { Link } from 'react-router-dom'
 
-const TaskListRow = ({gradeLetter = "D", grade = "12", subject = null, to = '/apps/user/list'}) => {
+const TaskListRow = ({gradeLetter = "D", grade = "12", subject = null, to = '/apps/classes/list'}) => {
      return (
                <div className="row  btn-light myStyle__list" >
                     <div className="col-3 align-middle">

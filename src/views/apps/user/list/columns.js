@@ -90,13 +90,13 @@ export const columns = [
       <div className='d-flex justify-content-left align-items-center'>
         {renderClient(row)}
         <div className='d-flex flex-column'>
-          <Link
+          {/* <Link
             to={`/apps/user/view/${row.id}`}
             className='user-name text-truncate mb-0'
             onClick={() => store.dispatch(getUser(row.id))}
-          >
+          > */}
             <span className='font-weight-bold'>{row.fullName}</span>
-          </Link>
+          {/* </Link> */}
           {/* <small className='text-truncate text-muted mb-0'>@{row.username}</small> */}
         </div>
       </div>
@@ -155,7 +155,7 @@ export const columns = [
           </DropdownItem>
           <DropdownItem
             tag={Link}
-            to={`/apps/user/edit/1`}
+            to={`/apps/classes/edit/1`}
             className='w-100'
             onClick={() => store.dispatch(getUser(row.id))}
           >

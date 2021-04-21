@@ -13,7 +13,7 @@ import { Facebook, Twitter, Mail, GitHub } from 'react-feather'
 import { Row, Col, CardTitle, CardText, FormGroup, Label, Button, Form, Input, CustomInput } from 'reactstrap'
 
 import '@styles/base/pages/page-auth.scss'
-import avatar from '../../../assets/images/logo/logoNew.png'
+import avatar from '../../../assets/images/logo/logo.png'
 
 const Register = () => {
   const ability = useContext(AbilityContext)

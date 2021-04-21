@@ -116,7 +116,7 @@ const TODO = () => {
             <td>
               <span class="table-remove"
                 >
-                  <a href="/pages/blog/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                  <a href="/pages/details/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
                   More
                 </button></a></span
               >
@@ -132,7 +132,7 @@ const TODO = () => {
             <td>
             <span class="table-remove"
                 >
-                  <a href="/pages/blog/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                  <a href="/pages/details/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
                   More
                 </button></a></span
               >
@@ -149,7 +149,7 @@ const TODO = () => {
             <td>
             <span class="table-remove"
                 >
-                  <a href="/pages/blog/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                  <a href="/pages/details/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
                   More
                 </button></a></span
               >
@@ -166,7 +166,7 @@ const TODO = () => {
             <td>
             <span class="table-remove"
                 >
-                  <a href="/pages/blog/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
+                  <a href="/pages/details/edit"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0">
                   More
                 </button></a></span
               >

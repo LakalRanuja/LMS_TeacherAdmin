@@ -19,7 +19,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={commentOnArticle}
           onChange={e => setCommentOnArticle(e.target.checked)}
           name='customSwitch'
-          label='Email me when someone comments on my article'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <Col sm='12' className='mb-2'>
@@ -29,7 +29,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={answerOnForm}
           onChange={e => setAnswerOnForm(e.target.checked)}
           name='customSwitch'
-          label='Email me when someone answers on my form'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <Col sm='12' className='mb-2'>
@@ -39,7 +39,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={followMe}
           onChange={e => setFollowMe(e.target.checked)}
           name='customSwitch'
-          label='Email me when someone follows me'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <h6 className='section-label mx-1 mt-2'>Application</h6>
@@ -50,7 +50,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={newAnnouncements}
           onChange={e => setNewAnnouncements(e.target.checked)}
           name='customSwitch'
-          label='News and announcements'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <Col sm='12' className='mb-2'>
@@ -60,7 +60,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={productUpdates}
           onChange={e => setProductUpdates(e.target.checked)}
           name='customSwitch'
-          label='Weekly product updates'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <Col sm='12' className='mb-75'>
@@ -70,7 +70,7 @@ const NotificationsTabContent = ({ data }) => {
           checked={blogDigest}
           onChange={e => setBlogDigest(e.target.checked)}
           name='customSwitch'
-          label='Weekly blog digest'
+          label='Lorem Ipsum is simply dummy text of the printing.'
         />
       </Col>
       <Col className='mt-1' sm='12'>

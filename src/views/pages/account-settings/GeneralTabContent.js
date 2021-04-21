@@ -40,7 +40,7 @@ const GeneralTabs = ({ data }) => {
         <Row>
           <Col sm='6'>
             <FormGroup>
-              <Label for='username'>Username</Label>
+              <Label for='username'>First Name</Label>
               <Controller
                 defaultValue={data.username}
                 control={control}
@@ -58,7 +58,7 @@ const GeneralTabs = ({ data }) => {
           </Col>
           <Col sm='6'>
             <FormGroup>
-              <Label for='name'>Name</Label>
+              <Label for='name'>Last Name</Label>
               <Controller
                 defaultValue={data.fullName}
                 control={control}
@@ -95,7 +95,7 @@ const GeneralTabs = ({ data }) => {
           </Col>
           <Col sm='6'>
             <FormGroup>
-              <Label for='company'>Company</Label>
+              <Label for='company'>Contact</Label>
               <Controller
                 defaultValue={data.company}
                 control={control}

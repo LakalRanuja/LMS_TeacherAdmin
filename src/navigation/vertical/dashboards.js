@@ -6,8 +6,8 @@ export default [
   },
   {
     id: 'dashboards',
-    title: 'Dashboards',
+    title: 'Dashboard',
     icon: <Home size={20} />,
-    navLink: '/dashboard/ecommerce'
+    navLink: '/dashboard'
   }
 ]

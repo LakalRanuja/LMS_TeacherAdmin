@@ -99,35 +99,35 @@ const PagesRoutes = [
     component: lazy(() => import('../../views/pages/account-settings'))
   },
   {
-    path: '/pages/blog/list',
+    path: '/pages/details/list',
     exact: true,
     component: lazy(() => import('../../views/pages/blog/list'))
   },
   {
-    path: '/pages/blog/detail/:id',
+    path: '/pages/details/detail/:id',
     exact: true,
     component: lazy(() => import('../../views/pages/blog/details')),
     meta: {
-      navLink: '/pages/blog/detail'
+      navLink: '/pages/details/detail'
     }
   },
   {
-    path: '/pages/blog/detail',
+    path: '/pages/details/detail',
     exact: true,
     component: () => <Redirect to='/pages/blog/detail/1' />
   },
   {
-    path: '/pages/blog/edit/:id',
+    path: '/pages/details/edit/:id',
     exact: true,
     component: lazy(() => import('../../views/pages/blog/edit')),
     meta: {
-      navLink: '/pages/blog/edit'
+      navLink: '/pages/details/edit'
     }
   },
   {
-    path: '/pages/blog/edit',
+    path: '/pages/details/edit',
     exact: true,
-    component: () => <Redirect to='/pages/blog/edit/1' />
+    component: () => <Redirect to='/pages/details/edit/1' />
   },
   {
     path: '/pages/pricing',

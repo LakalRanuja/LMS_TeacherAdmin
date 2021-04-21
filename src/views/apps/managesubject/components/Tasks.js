@@ -7,7 +7,13 @@ import { Media, Button, Form, FormGroup, Label, Input, FormText, Table, Dropdown
 import RowData from './RowData'
 import { Lock, Edit, Trash2, FilePlus } from 'react-feather'
 import Select, { components } from 'react-select'
+import htmlToDraft from 'html-to-draftjs'
+import { Editor } from 'react-draft-wysiwyg'
+import { EditorState, ContentState } from 'draft-js'
 import { selectThemeColors, isObjEmpty } from '@utils'
+
+// Stylesheets
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
 const Tasks = props => {
 
@@ -31,12 +37,25 @@ const Tasks = props => {
     handleMainSidebar
   } = props
 
+  // States of editor -----
+ 
+  const initialContent = `
+  <p></p>
+  <p></p>
+  `
+  
+  const [data, setData] = useState(null)
+  const contentBlock = htmlToDraft(initialContent)
+  const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks)
+  const editorState = EditorState.createWithContent(contentState)
+  const [content, setContent] = useState(editorState)
+
   // [UPDATE]
    // ** States
    const [img, setImg] = useState(null)
    const rowDatatState = useSelector(state => state.manageSubjectContent.rowDataObject)
    const [guests, setGuests] = useState({})
-
+   
    // ** Function to change user image
    const onChange = e => {
      const reader = new FileReader(),
@@ -154,10 +173,21 @@ const Tasks = props => {
                               <Input type="text" name="email" id="exampleEmail" size = "sm" placeholder="" value = {rowDatatState ? rowDatatState.title : ""} className= " border border-primary bg-white" />
                             </FormGroup>
 
-                            <FormGroup className="col-12">
+                            <FormGroup className="col-12 ">
                               <Label for="exampleText">Description</Label>
-                              <Input type="textarea" name="text" id="exampleText" size = "sm" value = { rowDatatState ? rowDatatState.description : ""}   placeholder="" className= " border border-primary " />
+                              {/* <Editor editorState={content}  stripPastedStyles={{backgroundColor: "blue", width: "200px", height: "500px"}} toolbarStyle={{ display: "flex", flexDirection: 'row',  flexWrap: "wrap", justifyContent : "flex-start"}} onEditorStateChange={data => setContent(data)} /> */}
+                              <Editor
+                                editorState={content}
+                                wrapperStyle={{border: "1px solid lightgray", borderRadius : "5px"}}
+                                editorStyle={{height : "250px", padding: "5px"}}
+                                toolbarStyle={{backgroundColor : "#f5f5f0"}}
+                                toolbarClassName="toolbarClassName"
+                                wrapperClassName="wrapperClassName"
+                                editorClassName="editorClassName"
+                                onEditorStateChange={data => setContent(data)}
+                              />
                             </FormGroup>
+                            
 
                             <div className= "pr-1"> 
                             {/* media here */}

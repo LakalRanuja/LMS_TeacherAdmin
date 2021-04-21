@@ -14,7 +14,13 @@ export default [
     id: 'todo',
     title: 'Manage Schedular ',
     icon: <Clock size={20} />,
-    navLink: '/apps/todo'
+    navLink: '/apps/manage schedular'
+  },
+  {
+    id: 'chat',
+    title: 'Chat',
+    icon: <MessageSquare size={20} />,
+    navLink: '/apps/chat'
   },
   {
     id: 'blog',

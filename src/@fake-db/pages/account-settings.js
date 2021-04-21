@@ -3,10 +3,10 @@ const data = {
   accountSetting: {
     general: {
       avatar: require('@src/assets/images/portrait/small/avatar-s-11.jpg').default,
-      username: 'johndoe',
-      fullName: 'John Doe',
-      email: 'granger007@hogward.com',
-      company: 'IBM Technology'
+      username: 'Supun',
+      fullName: 'chamthka',
+      email: 'supun@gmail.com',
+      company: '0771234560'
     },
     info: {
       bio: '',

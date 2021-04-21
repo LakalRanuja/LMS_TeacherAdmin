@@ -174,7 +174,7 @@ const ChatLog = props => {
                 <h6 className='mb-0'>{selectedUser.contact.fullName}</h6>
               </div>
               <div className='d-flex align-items-center'>
-                <PhoneCall size={18} className='cursor-pointer d-sm-block d-none mr-1' />
+                {/* <PhoneCall size={18} className='cursor-pointer d-sm-block d-none mr-1' />
                 <Video size={18} className='cursor-pointer d-sm-block d-none mr-1' />
                 <Search size={18} className='cursor-pointer d-sm-block d-none' />
                 <UncontrolledDropdown>
@@ -198,7 +198,7 @@ const ChatLog = props => {
                       Report
                     </DropdownItem>
                   </DropdownMenu>
-                </UncontrolledDropdown>
+                </UncontrolledDropdown> */}
               </div>
             </header>
           </div>
@@ -211,7 +211,7 @@ const ChatLog = props => {
             <InputGroup className='input-group-merge mr-1 form-send-message'>
               <InputGroupAddon addonType='prepend'>
                 <InputGroupText>
-                  <Mic className='cursor-pointer' size={14} />
+                  {/* <Mic className='cursor-pointer' size={14} /> */}
                 </InputGroupText>
               </InputGroupAddon>
               <Input

@@ -28,7 +28,7 @@ import {
 } from 'reactstrap'
 
 import '@styles/base/pages/page-auth.scss'
-import avatar from '../../../assets/images/logo/logoNew.png'
+import avatar from '../../../assets/images/logo/logo.png'
 
 const ToastContent = ({ name, role }) => (
   <Fragment>

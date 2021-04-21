@@ -60,9 +60,8 @@ const InfoTabContent = ({ data }) => {
               })}
               innerRef={register({ required: true })}
             >
-              <option value='USA'>USA</option>
-              <option value='France'>France</option>
-              <option value='Canada'>Canada</option>
+              <option value='USA'>Sri Lanka</option>
+            
             </Input>
           </FormGroup>
         </Col>
