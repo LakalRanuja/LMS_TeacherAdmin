@@ -99,7 +99,7 @@ const TODO = () => {
         <thead>
           <tr>
             <th class="text-center">Class</th>
-            <th class="text-center">Start Date & Time</th>
+            <th class="text-center"><p>Start Date & Time</p></th>
             <th class="text-center">End Date & Time</th>
             <th class="text-center">Lesson</th>
             <th class="text-center">Content</th>

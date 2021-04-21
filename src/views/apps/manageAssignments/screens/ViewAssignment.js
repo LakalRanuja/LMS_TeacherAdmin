@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import classnames from 'classnames'
 
 // ** Todo App Components
-import Tasks from '../components/Tasks'
+import TasksAssignments from '../components/TasksAssignments'
 // import Card from '../../ui-elements/cards/advance/CardCongratulations'
 
 // ** Store & Actions
@@ -40,7 +40,7 @@ const Index = () => {
 
   return (
     <div className="col-12 overflow-auto bg-white align-items-center">
-          <Tasks />
+          <TasksAssignments />
      </div>
   )
 }

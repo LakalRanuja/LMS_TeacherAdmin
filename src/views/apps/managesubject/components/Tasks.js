@@ -221,7 +221,7 @@ const Tasks = props => {
                           <tr>
                           <th style={{width : '25%'}}>Title</th>
                             <th style={{width : '50%'}}>Description</th>
-                            <th style={{width : '20%'}}>Grade</th>
+                            <th style={{width : '20%'}}>Class</th>
                             <th style={{width : '25%'}}>Action</th>
                           </tr>
                         </thead>
