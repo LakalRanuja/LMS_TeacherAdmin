@@ -227,7 +227,17 @@ const AppRoutes = [
     // meta: {
     //   navLink: '/apps/manageclasses'
     // }
+  },
+  {
+    path: '/apps/managenotifucations/view',
+    appLayout: true,
+    className: 'todo-application',
+    component: lazy(() => import('../../views/apps/managenotifucations/screens/index'))
+    // meta: {
+    //   navLink: '/apps/manageclasses'
+    // }
   }
+  
 
 ]
 

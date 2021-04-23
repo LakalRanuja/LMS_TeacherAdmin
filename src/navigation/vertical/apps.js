@@ -1,4 +1,4 @@
-import { Mail, Clipboard, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Clock, Briefcase, Archive, Book } from 'react-feather'
+import { Mail, Clipboard, MessageSquare, CheckSquare, Calendar, FileText, Circle, ShoppingCart, User, Clock, Briefcase, Archive, Book, Bell } from 'react-feather'
 
 export default [
   {
@@ -39,5 +39,11 @@ export default [
     title: 'Manage Assignments',
     icon: <FileText size={20} />,
     navLink: '/apps/manage-assignments/view'
+  },
+  {
+    id: 'notification',
+    title: 'Notifications',
+    icon: <Bell size={20} />,
+    navLink: '/apps/managenotifucations/view'
   }
 ]

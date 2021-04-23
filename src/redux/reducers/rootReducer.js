@@ -16,6 +16,7 @@ import dataTables from '@src/views/tables/data-tables/store/reducer'
 
 import manageClassess from '@src/views/apps/manageclasses/store/reducer'
 import manageSubjectContent from '@src/views/apps/managesubject/store/reducer'
+import Notification from '@src/views/apps//managenotifucations/store/reducer'
 
 const rootReducer = combineReducers({
   auth,
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
   ecommerce,
   dataTables,
   manageClassess,
-  manageSubjectContent
+  manageSubjectContent,
+  Notification
 })
 
 export default rootReducer

@@ -1,0 +1,34 @@
+
+
+.myStyle {
+     /* min-width : 360px; */
+     
+     background: linear-gradient(to top left, #008083 0%, #42a0a3 100%);  
+     -webkit-box-shadow: 6px 6px 6px 20px #000000; 
+     box-shadow: 6px 6px 6px 20px #000000;
+}
+
+.myStyle__headTextContainer {
+     text-align: right;
+     padding-right: 5px;
+}
+
+.myStyle__headTextContainer2 {
+     text-align: left;
+     padding-left: 5px;
+}
+
+.myText {
+     font-size: 12.5px;
+     font-weight: 400;
+}
+
+.myTextSub {
+     font-size: 12.5px;
+     font-weight: 400;
+}
+
+.myColor {
+     color : #000;
+     font-weight: 600;
+}
