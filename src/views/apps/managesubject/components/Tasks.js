@@ -69,16 +69,16 @@ const Tasks = props => {
    }
 
   const dataObjArray = [
-    {title : "An Apple", grade : "11 B", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "The Google", grade : "12 A", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "The Yandex", grade : "10 C", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "Microsoft", grade : "9 A", description : "Online free AI English to Sinhala translator powered by Google", file : null}
+    {title : "An Apple", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Google", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Yandex", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "Microsoft", description : "Online free AI English to Sinhala translator powered by Google", file : null}
   ]
   const dataObjArray2 = [
-    {title : "An Red Apple", grade : "11 A", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "The Small Google", grade : "13 A", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "The Large Yandex", grade : "8 A", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
-    {title : "My Self", grade : "6 A", description : "Online free AI English to Sinhala translator powered by Google", file : null}
+    {title : "An Red Apple", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Small Google", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "The Large Yandex", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.", file : null},
+    {title : "My Self", description : "Online free AI English to Sinhala translator powered by Google", file : null}
   ]
 
   const guestsOptions = [
@@ -219,15 +219,14 @@ const Tasks = props => {
                     <Table size="sm" hover >
                         <thead>
                           <tr>
-                          <th style={{width : '25%'}}>Title</th>
-                            <th style={{width : '50%'}}>Description</th>
-                            <th style={{width : '20%'}}>Class</th>
+                            <th style={{width : '25%'}}>Title</th>
+                            <th style={{width : '70%'}}>Description</th>
                             <th style={{width : '25%'}}>Action</th>
                           </tr>
                         </thead>
                         <tbody >
                         {/* here */}
-                         { dataObjArray.map((item) => <RowData title= {item.title} grade= {item.grade} description= {item.description}  />)}
+                         { dataObjArray.map((item) => <RowData title= {item.title} description= {item.description}  />)}
                         
                         </tbody>
                       </Table>
@@ -350,14 +349,13 @@ const Tasks = props => {
                         <thead>
                           <tr>
                             <th style={{width : '25%'}}>Title</th>
-                            <th style={{width : '50%'}}>Description</th>
-                            <th style={{width : '20%'}}>Grade</th>
+                            <th style={{width : '70%'}}>Description</th>
                             <th style={{width : '25%'}}>Action</th>
                           </tr>
                         </thead>
                         <tbody >
                         {/* here */}
-                         { dataObjArray2.map((item) => <RowData title= {item.title} grade= {item.grade} description= {item.description}  />)}
+                         { dataObjArray2.map((item) => <RowData title= {item.title} description= {item.description}  />)}
                         
                         </tbody>
                       </Table>
