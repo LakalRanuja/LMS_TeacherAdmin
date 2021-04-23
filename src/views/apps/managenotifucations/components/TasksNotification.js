@@ -167,9 +167,9 @@ const TaskNotifications = props => {
                     <div className="col-12 bg-white myupperContent rounded mr-1 mb-2 shadow py-1">
                          <div className="col-12 px-2">
                          {/* grade */}
-                          <div className=" pb-1 " > 
+                          <div className="  " > 
                           {/* Recipients of the Message */}
-                          <FormGroup className="col-12 mb-1">
+                          {/* <FormGroup className="col-12 mb-1">
                             <Label for='gradeManageLesson' className="text-primary mt-1">Recipients of the Message</Label> 
 
                            <Form className="mt-1 mb-1">
@@ -184,10 +184,10 @@ const TaskNotifications = props => {
                                 </Label>
                               </FormGroup>
                             </Form>
-                          </FormGroup>
+                          </FormGroup> */}
 
-                          {/* Grade */}
-                            {isStudentChecked ? <FormGroup className="col-12 pb-1">
+                      {/* Grade */}
+                            {/* {isStudentChecked ? <FormGroup className="col-12 pb-1">
                             <Label for='gradeManageLesson' className="text-primary">Grade</Label> 
 
                            <Form className="mt-1 mb-1">
@@ -240,10 +240,66 @@ const TaskNotifications = props => {
                                 />
                            </div>
                           </div>
-                          </FormGroup>  : null}                   
+                          </FormGroup>  : null}                    */}
+
+                           <FormGroup className="col-12">
+                            <Label for='gradeManageLesson' className="text-primary">Grade</Label> 
+
+                           {/* <Form className="mt-1 mb-1">
+                              <FormGroup check inline  className="col-3">
+                                <Label check>
+                                  <Input type="checkbox"color="primary" onChange={ () => setIsGradeChecked(!isGradeChecked)}/>  All Grades
+                                </Label>
+                              </FormGroup>
+                              <FormGroup check inline className="col-4">
+                                <Label check>
+                                  <Input type="checkbox" color="primary"  onChange={() => setIsClassChecked(!isClassChecked)} /> All Classes
+                                </Label>
+                              </FormGroup>
+                            </Form> */}
+                         
+                          <div className="row">
+                          <div className="col-7 ">
+                              <Select 
+                                isDisabled={isGradeChecked}
+                                 isMulti
+                                  id='gradeManageLesson'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeOptions}
+                                  theme={selectThemeColors}
+                                  value={grade.length ? [...grade] : null}
+                                  onChange={data => setGrade([...data])}
+                                  components={{
+                                    Option: GradeComponent
+                                  }}
+                                />
+                              </div>
+                              
+                              <div className="col-5">
+                              <Select 
+                                  isDisabled={isClassChecked}
+                                  isMulti
+                                  id='gradeLetterManageLesson'
+                                  className='react-select'
+                                  classNamePrefix='select'
+                                  isClearable={false}
+                                  options={gradeLetterOptions}
+                                  theme={selectThemeColors}
+                                  value={gradeLetter.length ? [...gradeLetter] : null}
+                                  onChange={data => setGradeLetter([...data])}
+                                  components={{
+                                    Option: GradeLetterComponent
+                                  }}
+                                />
+                           </div>
+                          </div>
+                          </FormGroup>  
+
                           </div>
 
-                          <div className="border-bottom mb-1 mx-1"></div>
+                          {/* <div className="border-bottom mb-1 mx-1"></div> */}
 
                             <FormGroup className="col-12">
                                 <Label for="exampleEmail" className="text-primary">Title</Label>

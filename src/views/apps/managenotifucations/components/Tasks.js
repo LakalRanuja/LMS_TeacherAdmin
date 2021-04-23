@@ -159,11 +159,11 @@ const Tasks = props => {
                     <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
                          <div className="col-12 px-2">
                          {/* grade */}
-                          <div className=" pb-1 " > 
+                          <div className=" " > 
                           <FormGroup className="col-12 mb-1">
                             <Label for='gradeManageLesson' className="text-primary mt-1">Grade</Label> 
 
-                           <Form className="mt-1 mb-1">
+                           {/* <Form className="mt-1 mb-1">
                               <FormGroup check inline  className="col-3">
                                 <Label check>
                                   <Input type="checkbox"color="primary" onChange={ () => setIsGradeChecked(!isGradeChecked)}/>  All Grades
@@ -174,7 +174,7 @@ const Tasks = props => {
                                   <Input type="checkbox" color="primary"  onChange={() => setIsClassChecked(!isClassChecked)} /> All Classes
                                 </Label>
                               </FormGroup>
-                            </Form>
+                            </Form> */}
 
                          
                           <div className="row">
@@ -217,7 +217,7 @@ const Tasks = props => {
                           </FormGroup>                     
                           </div>
 
-                          <div className="border-bottom mb-1 mx-1"></div>
+                          {/* <div className="border-bottom mb-1 mx-1"></div> */}
 
                             <FormGroup className="col-12">
                                 <Label for="exampleEmail" className="text-primary">Title</Label>
