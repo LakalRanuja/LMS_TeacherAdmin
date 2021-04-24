@@ -11,7 +11,7 @@ import Sidebar from '../components/Sidebar'
 
 // ** Store & Actions
 import { useDispatch, useSelector } from 'react-redux'
-import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks } from '../store/actions/index'
+import { getTasks, updateTask, selectTask, addTask, deleteTask, reOrderTasks, toggleNav_Reset } from '../store/actions/index'
 
 // ** Styles
 import '@styles/react/apps/app-todo.scss'
@@ -26,6 +26,12 @@ const Index = () => {
   // ** Store Vars
   const dispatch = useDispatch()
   const store = useSelector(state => state.todo)
+
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch(toggleNav_Reset())
+  //   }
+  // })
 
   // ** URL Params
   const paramsURL = useParams()

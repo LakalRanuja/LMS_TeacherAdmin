@@ -46,7 +46,7 @@ const TodoSidebar = props => {
                 </ListGroupItem>
                 <ListGroupItem
                   tag={Link}
-                  to={'/apps/managesubjects/view/content'}
+                  to={'/apps/managesubject/view'}
                   active={ !state.toggleNavClasses}
                   onClick={() => {
                     dispatch(toggleNavBeeetweenSubject_Content(false))

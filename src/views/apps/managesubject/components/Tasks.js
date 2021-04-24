@@ -15,6 +15,8 @@ import { selectThemeColors, isObjEmpty } from '@utils'
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
 
+// import { toggleNav_Reset} from '../store/actions/index'
+
 const Tasks = props => {
 
   const state = useSelector(state => state.manageSubjectContent)
@@ -27,7 +29,7 @@ const Tasks = props => {
     tasks,
     params,
     setSort,
-    dispatch,
+    // dispatch,
     getTasks,
     setQuery,
     updateTask,
@@ -43,7 +45,7 @@ const Tasks = props => {
   <p></p>
   <p></p>
   `
-  
+  const dispatch = useDispatch()
   const [data, setData] = useState(null)
   const contentBlock = htmlToDraft(initialContent)
   const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks)

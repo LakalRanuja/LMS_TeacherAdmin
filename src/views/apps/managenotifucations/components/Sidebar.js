@@ -1,19 +1,27 @@
 // ** React Imports
+import { useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {toggleNavBeeetweenSubject_Content, resetTableRowDetails, toggleNavBeeetweenInbox_ManageNotification} from '../store/actions/index'
+import {toggleNavBeeetweenSubject_Content, resetTableRowDetails, toggleNavBeeetweenInbox_ManageNotification, toggleNav_Reset} from '../store/actions/index'
 
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 // ** Third Party Components
 import classnames from 'classnames'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import { Button, ListGroup, ListGroupItem } from 'reactstrap'
 import { Mail, Star, Check, Trash, Plus, Folder, FolderPlus } from 'react-feather'
 
+
 const TodoSidebar = props => {
   // ** Props
   const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props
   const state = useSelector(state => state.Notification)
+  // const dispatch = useDispatch()
+
+  // useEffect(() => {
+  //     dispatch(toggleNavBeeetweenSubject_Content(true))
+  //     dispatch(toggleNavBeeetweenInbox_ManageNotification(false))
+  // }, [])
 
   return (
     <div

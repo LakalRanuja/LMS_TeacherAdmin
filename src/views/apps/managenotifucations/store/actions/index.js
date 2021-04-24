@@ -1,5 +1,6 @@
 import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
    SET_TABLE_ROW_DETAILS,
+   RESET_TOGGLE_NAV,
     RESET_TABLE_ROW_DETAILS,
      TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY
     } from '../actionTypes/manageNotificationTypes'
@@ -11,6 +12,13 @@ export const toggleNavBeeetweenSubject_Content = bool => {
       task : bool
     }
 }
+// ** [UPDATED]
+export const toggleNav_Reset = () => {
+  return {
+      type : RESET_TOGGLE_NAV
+    }
+}
+
 // ** [UPDATED]
 export const toggleNavBeeetweenInbox_ManageNotification = bool => {
   return {

@@ -1,10 +1,16 @@
-import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS} from '../actionTypes/manageSubjectTypes'
+import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS, RESET_TOGGLE_NAV} from '../actionTypes/manageSubjectTypes'
 
 // ** [UPDATED]
 export const toggleNavBeeetweenSubject_Content = bool => {
   return {
       type : TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
       task : bool
+    }
+}
+
+export const toggleNav_Reset = () => {
+  return {
+      type : RESET_TOGGLE_NAV
     }
 }
 

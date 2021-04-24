@@ -1,8 +1,9 @@
 
 import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON,
-  TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY,
-   SET_TABLE_ROW_DETAILS,
-    RESET_TABLE_ROW_DETAILS
+      TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY,
+      SET_TABLE_ROW_DETAILS,
+      RESET_TABLE_ROW_DETAILS,
+      RESET_TOGGLE_NAV
   } from '../actionTypes/manageNotificationTypes'
 // ** Initial State
 const initialState = {
@@ -24,6 +25,9 @@ const NotificationReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_NAV_BETWEEN_CONTENT_LESSON:
       return { ...state, toggleNavClasses : action.task }
+
+    case RESET_TOGGLE_NAV:
+        return { ...state, toggleNavClasses : true,  toggleNavInboxClasses : false }
     
     case TOGGLE_NAV_BETWEEN_INBOX_AND_MANAGE_NOTIFICATION_OR_ACTIVITY:
       return { ...state, toggleNavInboxClasses : action.task }

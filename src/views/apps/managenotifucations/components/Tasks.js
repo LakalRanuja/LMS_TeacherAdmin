@@ -6,14 +6,17 @@ import './styles/task.css'
 import { Button, Form, FormGroup, Label, Input, Table  } from 'reactstrap'
 import RowData from './RowData'
 import TaskNotifications from './TasksNotification'
-import TasksMyInbox from './TasksMyInbox'
+// import TasksMyInbox from './TasksMyInbox'
 import Select, { components } from 'react-select'
 import htmlToDraft from 'html-to-draftjs'
 import { EditorState, ContentState } from 'draft-js'
 import { selectThemeColors, isObjEmpty } from '@utils'
 
+import { toggleNav_Reset} from '../store/actions/index'
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
+import './styles/taskMyInbox.css'
+import Card from './Card'
 
 const Tasks = props => {
 
@@ -27,7 +30,7 @@ const Tasks = props => {
     tasks,
     params,
     setSort,
-    dispatch,
+    // dispatch,
     getTasks,
     setQuery,
     updateTask,
@@ -43,7 +46,7 @@ const Tasks = props => {
   <p></p>
   <p></p>
   `
-  
+  const dispatch = useDispatch()
   const [data, setData] = useState(null)
   const contentBlock = htmlToDraft(initialContent)
   const contentState = ContentState.createFromBlockArray(contentBlock.contentBlocks)
@@ -66,7 +69,10 @@ const Tasks = props => {
         setIsGradeChecked(false)
         setIsClassChecked(false)
       }, [state.toggleNavClasses])
-   
+
+      useEffect(() => {
+        dispatch(toggleNav_Reset())
+    }, [])
 
   const dataObjArray = [
     {title : "An Apple", date : "20/03/2021", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.", more : null},
@@ -145,6 +151,13 @@ const Tasks = props => {
       </components.Option>
     )
   }
+
+  const dataInboxObjArray = [
+    {title : "An Apple", date : "27/03/2021", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.Online free AI English to Sinhala translator powered by Google."},
+    {title : "The Google", date : "20/03/2021", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.Online free AI English to Sinhala translator powered by Google."},
+    {title : "The Yandex", date : "11/03/2021", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu."},
+    {title : "Microsoft", date : "27/02/2021", description : "Online free AI English to Sinhala translator powered by Google. English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu."}
+  ]
 
   return (
     <div className='todo-app-list overflow-auto  '>
@@ -254,7 +267,19 @@ const Tasks = props => {
                         </tbody>
                       </Table>
                     </div>
-                </div> :  <TaskNotifications /> : <TasksMyInbox />}
+                  {/* inbox */}
+                </div> :  <TaskNotifications /> :   <div className="col-12 ">
+                    <h4>Inbox</h4>
+                    <div className="myStyle__hr mt-1 mb-1"></div>
+                    
+                      {/* card container */}
+                      <div className=" col-12">
+                          <div className="myContainer overflow-auto">
+                          {dataInboxObjArray.map((item, i) => <Card key={i} date={item.date} title={item.title} description ={item.description} />)}
+                     
+                          </div>
+                      </div>
+                  </div>}
           </div>
       </div>  
     </div>

@@ -25,7 +25,7 @@ const TasksMyInbox = props => {
   } = props
 
   
-  const dataObjArray = [
+  const dataInboxObjArray = [
     {title : "An Apple", date : "27/03/2021", description : "Online free AI English to Microsoft, IBM, Naver, Yandex and Baidu.Online free AI English to Sinhala translator powered by Google."},
     {title : "The Google", date : "20/03/2021", description : "English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.Online free AI English to Sinhala translator powered by Google."},
     {title : "The Yandex", date : "11/03/2021", description : "Online free AI English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu.English to Sinhala translator powered by Google, Microsoft, IBM, Naver, Yandex and Baidu."},
@@ -42,7 +42,7 @@ const TasksMyInbox = props => {
                       {/* card container */}
                       <div className=" col-12">
                           <div className="myContainer overflow-auto">
-                          {dataObjArray.map((item, i) => <Card key={i} date={item.date} title={item.title} description ={item.description} />)}
+                          {dataInboxObjArray.map((item, i) => <Card key={i} date={item.date} title={item.title} description ={item.description} />)}
                      
                           </div>
                       </div>

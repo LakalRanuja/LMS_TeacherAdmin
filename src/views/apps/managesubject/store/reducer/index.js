@@ -1,5 +1,5 @@
 
-import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS} from '../actionTypes/manageSubjectTypes'
+import {TOGGLE_NAV_BETWEEN_CONTENT_LESSON, SET_TABLE_ROW_DETAILS, RESET_TABLE_ROW_DETAILS, RESET_TOGGLE_NAV} from '../actionTypes/manageSubjectTypes'
 // ** Initial State
 const initialState = {
   tasks: [],
@@ -19,6 +19,9 @@ const TodoReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_NAV_BETWEEN_CONTENT_LESSON:
       return { ...state, toggleNavClasses : action.task }
+
+    case RESET_TOGGLE_NAV:
+        return { ...state, toggleNavClasses : true }
 
     case SET_TABLE_ROW_DETAILS:
         return { ...state, rowDataObject : action.task } 
