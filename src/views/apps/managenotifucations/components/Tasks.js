@@ -15,7 +15,6 @@ import { selectThemeColors, isObjEmpty } from '@utils'
 import { toggleNav_Reset} from '../store/actions/index'
 // Stylesheets
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css"
-import './styles/taskMyInbox.css'
 import Card from './Card'
 
 const Tasks = props => {
@@ -162,7 +161,7 @@ const Tasks = props => {
   return (
     <div className='todo-app-list overflow-auto  '>
       <div className='app-fixed-search d-flex align-items-center  '>
-          <div className="bg-white myStyle__container col-12 p-2">
+          <div className="bg-white  col-12 p-2">
                 {/* [UPDATES] */}
                  {!state.toggleNavInboxClasses ? state.toggleNavClasses  ? <div className="col-12">
                     <h4>Manage Activities</h4>
@@ -172,24 +171,9 @@ const Tasks = props => {
                     <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
                          <div className="col-12 px-2">
                          {/* grade */}
-                          <div className=" " > 
                           <FormGroup className="col-12 mb-1">
                             <Label for='gradeManageLesson' className="text-primary mt-1">Grade</Label> 
 
-                           {/* <Form className="mt-1 mb-1">
-                              <FormGroup check inline  className="col-3">
-                                <Label check>
-                                  <Input type="checkbox"color="primary" onChange={ () => setIsGradeChecked(!isGradeChecked)}/>  All Grades
-                                </Label>
-                              </FormGroup>
-                              <FormGroup check inline className="col-4">
-                                <Label check>
-                                  <Input type="checkbox" color="primary"  onChange={() => setIsClassChecked(!isClassChecked)} /> All Classes
-                                </Label>
-                              </FormGroup>
-                            </Form> */}
-
-                         
                           <div className="row">
                           <div className="col-7 ">
                               <Select 
@@ -227,8 +211,7 @@ const Tasks = props => {
                                 />
                            </div>
                           </div>
-                          </FormGroup>                     
-                          </div>
+                          </FormGroup>    
 
                           {/* <div className="border-bottom mb-1 mx-1"></div> */}
 
@@ -242,7 +225,7 @@ const Tasks = props => {
                                 <Input type="textarea" name="text" id="exampleText" size = "sm" value = { rowDatatState ? rowDatatState.description : ""}  placeholder="" className= " border border-primary " />
                               </FormGroup>
 
-                             <div className="px-1 mb-2">
+                             <div className="px-1 mb-2 col-12">
                                <Button className="col-12  px-1 mt-2" size = "sm" color="primary">Send</Button>
                              </div>
                          </div>

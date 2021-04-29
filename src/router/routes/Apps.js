@@ -202,15 +202,6 @@ const AppRoutes = [
     // }
   }, 
   {
-    path: '/apps/managesubjects/view/content',
-    appLayout: true,
-    className: 'todo-application',
-    component: lazy(() => import('../../views/apps/managesubject/screens/index'))
-    // meta: {
-    //   navLink: '/apps/manageclasses'
-    // }
-  },
-  {
     path: '/apps/manage-assignments/view',
     appLayout: true,
     className: 'todo-application',

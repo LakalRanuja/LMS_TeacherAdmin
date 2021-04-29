@@ -40,7 +40,7 @@ const Tasks = props => {
   } = props
 
   // States of editor -----
- 
+
   const initialContent = `
   <p></p>
   <p></p>
@@ -59,7 +59,7 @@ const Tasks = props => {
    const [guests, setGuests] = useState({})
    const [grade, setGrade] = useState({})
    const [gradeLetter, setGradeLetter] = useState({})
-   
+
    // ** Function to change user image
    const onChange = e => {
      const reader = new FileReader(),
@@ -159,13 +159,13 @@ const Tasks = props => {
 
                     {/* input Container */}
                     <div className="row bg-white rounded mr-1 shadow py-1 myContainer">
-                         <div className="col-8 px-2">
                          {/* grade */}
+                         <div className="col-8 px-2">
                          <FormGroup className="col-12 ">
                             <Label for='gradeManageLesson'>Grade</Label>
                           <div className="row">
                           <div className="col-7">
-                              <Select 
+                              <Select
                                   id='gradeManageLesson'
                                   className='react-select'
                                   classNamePrefix='select'
@@ -179,9 +179,9 @@ const Tasks = props => {
                                   }}
                                 />
                               </div>
-                              
+
                               <div className="col-5">
-                              <Select 
+                              <Select
                                   isMulti
                                   id='gradeLetterManageLesson'
                                   className='react-select'
@@ -229,11 +229,12 @@ const Tasks = props => {
                         <tbody >
                         {/* here */}
                          { dataObjArray.map((item) => <RowData title= {item.title} description= {item.description}  />)}
-                        
+
                         </tbody>
                       </Table>
                     </div>
                 </div> :  <div className="col-12">
+     {/*//////////////////////////////////// ///////////////////////////// */}
                     <h4>Manage Contents</h4>
                     <div className="myStyle__hr mt-1 mb-1"></div>
 
@@ -245,7 +246,7 @@ const Tasks = props => {
                             <Label for='gradeManageContent'>Grade</Label>
                           <div className="row">
                           <div className="col-7">
-                              <Select 
+                              <Select
                                   id='gradeManageContent'
                                   className='react-select'
                                   classNamePrefix='select'
@@ -259,9 +260,9 @@ const Tasks = props => {
                                   }}
                                 />
                               </div>
-                              
+
                               <div className="col-5">
-                              <Select 
+                              <Select
                                   isMulti
                                   id='gradeLetterManageContent'
                                   className='react-select'
@@ -282,7 +283,7 @@ const Tasks = props => {
                           {/* dropdown  */}
                           <FormGroup className="col-12 ">
                             <Label for='guests'>All Lessons</Label>
-                            <Select 
+                            <Select
                               id='guests'
                               className='react-select'
                               classNamePrefix='select'
@@ -316,9 +317,9 @@ const Tasks = props => {
                                 onEditorStateChange={data => setContent(data)}
                               />
                             </FormGroup>
-                            
 
-                            <div className= "pr-1"> 
+
+                            <div className= "pr-1">
                             {/* media here */}
                             <Media className='mb-2'>
                                 {/* {renderUserAvatar()} */}
@@ -332,7 +333,7 @@ const Tasks = props => {
                                       </span>
                                       <input type='file' hidden id='change-img' onChange={onChange}  />
                                     </Button.Ripple>
-                                    
+
                                   </div>
                                 </Media>
                               </Media>
@@ -358,13 +359,13 @@ const Tasks = props => {
                         <tbody >
                         {/* here */}
                          { dataObjArray2.map((item) => <RowData title= {item.title} description= {item.description}  />)}
-                        
+
                         </tbody>
                       </Table>
                     </div>
                 </div>}
           </div>
-      </div>  
+      </div>
     </div>
   )
 }
