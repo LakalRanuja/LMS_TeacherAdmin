@@ -26,10 +26,6 @@ const ExtensionsRoutes = [
     component: lazy(() => import('../../views/extensions/copy-to-clipboard'))
   },
   {
-    path: '/extensions/react-player',
-    component: lazy(() => import('../../views/extensions/react-player'))
-  },
-  {
     path: '/extensions/context-menu',
     component: lazy(() => import('../../views/extensions/context-menu'))
   },

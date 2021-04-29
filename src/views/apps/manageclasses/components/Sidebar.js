@@ -1,4 +1,5 @@
 // ** React Imports
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import {toggleNavBeeetweenClasses} from '../store/actions/index'
 
@@ -14,6 +15,13 @@ const TodoSidebar = props => {
   // ** Props
   const { handleTaskSidebar, setMainSidebar, mainSidebar, dispatch, getTasks, params } = props
   const state = useSelector(state => state.manageClassess)
+
+  useEffect(() => {
+    
+    return () => {
+      dispatch(toggleNavBeeetweenClasses(true))
+    }
+  }, [])
 
   return (
     <div
