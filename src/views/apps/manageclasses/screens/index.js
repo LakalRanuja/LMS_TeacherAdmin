@@ -40,18 +40,6 @@ const Index = () => {
   const handleMainSidebar = () => setMainSidebar(!mainSidebar)
   const handleTaskSidebar = () => setOpenTaskSidebar(!openTaskSidebar)
 
-  // ** Get Tasks on mount & based on dependency change
-  // useEffect(() => {
-  //   dispatch(
-  //     getTasks({
-  //       filter: paramsURL.filter || '',
-  //       q: query || '',
-  //       sortBy: sort || '',
-  //       tag: paramsURL.tag || ''
-  //     })
-  //   )
-  // }, [store.tasks.length, paramsURL.filter, paramsURL.tag, query, sort])
-
   return (
     // <Fragment>
     //   {/* <Card/> */}
